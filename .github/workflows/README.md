@@ -1,51 +1,33 @@
-# GitHub Pages Deployment Workflow
+# GitHub Pages Deployment
 
-This repository includes automated deployment workflows for GitHub Pages.
+This workflow deploys the React application to GitHub Pages.
 
-## Workflows
+## Configuration
 
-### Deployment (`deploy.yml`)
-- Automatically deploys on pushes to `development` branch
-- Simple and straightforward deployment
+1. **Repository Settings**: 
+   - Go to Settings > Pages
+   - Source: "GitHub Actions"
+   - Branch: `development`
 
-## Setup Instructions
+2. **Base Path**: 
+   - The app is configured to work at the root path `/`
+   - For GitHub Pages, the site will be available at: `https://adikowal1995.github.io/codetalent/`
 
-### 1. Enable GitHub Pages
-1. Go to your repository Settings
-2. Navigate to "Pages" in the sidebar
-3. Under "Source", select "GitHub Actions"
-
-### 2. Branch Strategy
-- `development` → Main deployment branch
-
-## Usage
-
-### Automatic Deployment
-- Push to `development` branch to trigger automatic deployment
-
-### Manual Deployment
-1. Go to Actions tab
-2. Select "Deploy to GitHub Pages"
-3. Click "Run workflow"
-
-## Environment Variables
-
-The workflows use the following environment variables:
-- `NODE_VERSION`: Set to '18' for consistent builds
-- `CI`: Set to 'false' to prevent treating warnings as errors
-
-## Build Commands
-
-- **Build**: `npm run build`
+3. **SPA Routing**:
+   - Added `404.html` for client-side routing support
+   - Added routing script to `index.html`
 
 ## Troubleshooting
 
-### Common Issues
-1. **Build fails**: Check Node.js version compatibility
-2. **Deployment fails**: Verify GitHub Pages is enabled
-3. **Environment not found**: Create environments in repository settings
+If you see routing errors:
+- Check that the base path in `vite.config.ts` is set to `/`
+- Ensure `404.html` is copied to the dist folder during build
+- Verify that the routing script is present in `index.html`
 
-### Debug Steps
-1. Check the Actions tab for detailed logs
-2. Verify branch names match workflow configuration
-3. Ensure all required permissions are granted 
+## Manual Deployment
+
+To manually trigger deployment:
+1. Go to Actions tab
+2. Select "Deploy to GitHub Pages" workflow
+3. Click "Run workflow"
+4. Select the `development` branch 
