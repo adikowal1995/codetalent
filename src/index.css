@@ -17,14 +17,14 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 217 91% 60%;
+    --primary: 217 91% 40%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217 91% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 215 28% 17%;
 
     --accent: 43 96% 56%;
     --accent-foreground: 0 0% 100%;
@@ -34,13 +34,13 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 217 91% 60%;
+    --ring: 217 91% 40%;
 
-    --hero-bg: 217 91% 60%;
+    --hero-bg: 217 91% 40%;
     --hero-text: 0 0% 100%;
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(43 96% 56%));
-    --shadow-elegant: 0 10px 30px -10px hsl(217 91% 60% / 0.3);
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.4);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 40%), hsl(43 96% 56%));
+    --shadow-elegant: 0 10px 30px -10px hsl(217 91% 40% / 0.3);
+    --shadow-glow: 0 0 40px hsl(217 91% 40% / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
@@ -72,7 +72,7 @@ All colors MUST be HSL.
     --popover: 217.2 32.6% 17.5%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91% 60%;
+    --primary: 217 91% 40%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217 91% 60%;
@@ -89,13 +89,13 @@ All colors MUST be HSL.
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 217 91% 60%;
+    --ring: 217 91% 40%;
 
-    --hero-bg: 217 91% 60%;
+    --hero-bg: 217 91% 40%;
     --hero-text: 0 0% 100%;
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(43 96% 56%));
-    --shadow-elegant: 0 10px 30px -10px hsl(217 91% 60% / 0.3);
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.4);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 40%), hsl(43 96% 56%));
+    --shadow-elegant: 0 10px 30px -10px hsl(217 91% 40% / 0.3);
+    --shadow-glow: 0 0 40px hsl(217 91% 40% / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
