@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { colors } from "@/lib/colors";
 
 const ProcessSection = () => {
   const processSteps = [
@@ -35,11 +36,16 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section 
+      className="py-16"
+      style={{ backgroundColor: colors.gray50 }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Nasz proces rekrutacji</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.textPrimary }}>
+            Nasz proces rekrutacji
+          </h2>
+          <p className="text-xl max-w-2xl mx-auto" style={{ color: colors.textSecondary }}>
             Sprawdzony 6-etapowy proces, który gwarantuje znalezienie 
             idealnego kandydata dla Twojej firmy.
           </p>
@@ -47,17 +53,33 @@ const ProcessSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {processSteps.map((step, index) => (
-            <Card key={index} className="group hover:shadow-elegant transition-all duration-300">
+            <Card 
+              key={index} 
+              className="group transition-all duration-300 hover:shadow-lg"
+              style={{ 
+                border: `1px solid ${colors.borderLight}`,
+                backgroundColor: colors.white
+              }}
+            >
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-accent text-accent-foreground rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform">
+                  <div 
+                    className="rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform"
+                    style={{ 
+                      backgroundColor: colors.accentOrange,
+                      color: colors.textLight
+                    }}
+                  >
                     {step.step}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
+                    <h3 
+                      className="text-xl font-semibold mb-2 transition-colors group-hover:opacity-80"
+                      style={{ color: colors.textPrimary }}
+                    >
                       {step.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="leading-relaxed" style={{ color: colors.textSecondary }}>
                       {step.description}
                     </p>
                   </div>
@@ -67,7 +89,12 @@ const ProcessSection = () => {
           ))}
         </div>
 
-        <div className="mt-12 bg-gradient-primary rounded-lg p-8 text-white text-center">
+        <div 
+          className="mt-12 rounded-lg p-8 text-white text-center"
+          style={{ 
+            background: `linear-gradient(135deg, ${colors.primaryBlue} 0%, ${colors.primaryBlueDark} 100%)`
+          }}
+        >
           <h3 className="text-4xl font-semibold mb-4">
             Gwarancja jakości
           </h3>

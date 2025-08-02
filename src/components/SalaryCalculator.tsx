@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import ContactForm from "./ContactForm";
+import { colors } from "@/lib/colors";
 
 export interface CalculatorData {
   role: string;
@@ -27,73 +28,125 @@ const SalaryCalculator = () => {
     b2b: [number, number];
     baseCost: number;
   }>>> = {
-    "Backend Developer": {
-      Junior: {
-        zdalna: { uop: [8000, 12000], b2b: [10500, 14000], baseCost: 15000 },
-        hybrydowa: { uop: [7500, 11000], b2b: [9600, 13100], baseCost: 15000 },
-        stacjonarna: { uop: [7000, 10000], b2b: [8750, 12250], baseCost: 15000 }
-      },
-      Mid: {
-        zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 },
-        hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 },
-        stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 }
-      },
-      Senior: {
-        zdalna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 30000 },
-        hybrydowa: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 30000 },
-        stacjonarna: { uop: [16000, 24000], b2b: [17500, 28000], baseCost: 30000 }
-      }
+    "Java Developer": {
+      Junior: { zdalna: { uop: [8000, 12000], b2b: [10500, 14000], baseCost: 15000 }, hybrydowa: { uop: [7500, 11000], b2b: [9600, 13100], baseCost: 15000 }, stacjonarna: { uop: [7000, 10000], b2b: [8750, 12250], baseCost: 15000 } },
+      Mid: { zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 }, hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 }, stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 } },
+      Senior: { zdalna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 30000 }, hybrydowa: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 30000 }, stacjonarna: { uop: [16000, 24000], b2b: [17500, 28000], baseCost: 30000 } }
+    },
+    ".NET Developer": {
+      Junior: { zdalna: { uop: [8000, 12000], b2b: [10500, 14000], baseCost: 15000 }, hybrydowa: { uop: [7500, 11000], b2b: [9600, 13100], baseCost: 15000 }, stacjonarna: { uop: [7000, 10000], b2b: [8750, 12250], baseCost: 15000 } },
+      Mid: { zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 }, hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 }, stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 } },
+      Senior: { zdalna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 30000 }, hybrydowa: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 30000 }, stacjonarna: { uop: [16000, 24000], b2b: [17500, 28000], baseCost: 30000 } }
+    },
+    "PHP Developer": {
+      Junior: { zdalna: { uop: [7000, 11000], b2b: [8750, 13125], baseCost: 14000 }, hybrydowa: { uop: [6500, 10500], b2b: [7875, 12250], baseCost: 14000 }, stacjonarna: { uop: [6000, 10000], b2b: [7000, 11375], baseCost: 14000 } },
+      Mid: { zdalna: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 19000 }, hybrydowa: { uop: [10500, 16000], b2b: [12250, 18375], baseCost: 19000 }, stacjonarna: { uop: [10000, 15000], b2b: [11375, 17500], baseCost: 19000 } },
+      Senior: { zdalna: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 28000 }, hybrydowa: { uop: [16000, 24000], b2b: [18375, 29750], baseCost: 28000 }, stacjonarna: { uop: [15000, 22000], b2b: [17500, 28000], baseCost: 28000 } }
+    },
+    "Python Developer": {
+      Junior: { zdalna: { uop: [8000, 12000], b2b: [10500, 14000], baseCost: 15000 }, hybrydowa: { uop: [7500, 11000], b2b: [9600, 13100], baseCost: 15000 }, stacjonarna: { uop: [7000, 10000], b2b: [8750, 12250], baseCost: 15000 } },
+      Mid: { zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 }, hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 }, stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 } },
+      Senior: { zdalna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 30000 }, hybrydowa: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 30000 }, stacjonarna: { uop: [16000, 24000], b2b: [17500, 28000], baseCost: 30000 } }
+    },
+    "C++ Developer": {
+      Junior: { zdalna: { uop: [9000, 13000], b2b: [11375, 14875], baseCost: 16000 }, hybrydowa: { uop: [8500, 12500], b2b: [10500, 14000], baseCost: 16000 }, stacjonarna: { uop: [8000, 12000], b2b: [9625, 13125], baseCost: 16000 } },
+      Mid: { zdalna: { uop: [13000, 20000], b2b: [14875, 22750], baseCost: 22000 }, hybrydowa: { uop: [12500, 19000], b2b: [14000, 21875], baseCost: 22000 }, stacjonarna: { uop: [12000, 18000], b2b: [13125, 21000], baseCost: 22000 } },
+      Senior: { zdalna: { uop: [20000, 32000], b2b: [22750, 38500], baseCost: 35000 }, hybrydowa: { uop: [19000, 30000], b2b: [21875, 36750], baseCost: 35000 }, stacjonarna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 35000 } }
+    },
+    "Node.js Developer": {
+      Junior: { zdalna: { uop: [7500, 11000], b2b: [9625, 13125], baseCost: 14000 }, hybrydowa: { uop: [7000, 10500], b2b: [8750, 12250], baseCost: 14000 }, stacjonarna: { uop: [6500, 10000], b2b: [7875, 11375], baseCost: 14000 } },
+      Mid: { zdalna: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 19000 }, hybrydowa: { uop: [10500, 16000], b2b: [12250, 18375], baseCost: 19000 }, stacjonarna: { uop: [10000, 15000], b2b: [11375, 17500], baseCost: 19000 } },
+      Senior: { zdalna: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 28000 }, hybrydowa: { uop: [16000, 24000], b2b: [18375, 29750], baseCost: 28000 }, stacjonarna: { uop: [15000, 22000], b2b: [17500, 28000], baseCost: 28000 } }
+    },
+    "Golang Developer": {
+      Junior: { zdalna: { uop: [9000, 13000], b2b: [11375, 14875], baseCost: 16000 }, hybrydowa: { uop: [8500, 12500], b2b: [10500, 14000], baseCost: 16000 }, stacjonarna: { uop: [8000, 12000], b2b: [9625, 13125], baseCost: 16000 } },
+      Mid: { zdalna: { uop: [13000, 20000], b2b: [14875, 22750], baseCost: 22000 }, hybrydowa: { uop: [12500, 19000], b2b: [14000, 21875], baseCost: 22000 }, stacjonarna: { uop: [12000, 18000], b2b: [13125, 21000], baseCost: 22000 } },
+      Senior: { zdalna: { uop: [20000, 32000], b2b: [22750, 38500], baseCost: 35000 }, hybrydowa: { uop: [19000, 30000], b2b: [21875, 36750], baseCost: 35000 }, stacjonarna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 35000 } }
+    },
+    "Full Stack Developer": {
+      Junior: { zdalna: { uop: [8000, 12000], b2b: [10500, 14000], baseCost: 15000 }, hybrydowa: { uop: [7500, 11000], b2b: [9600, 13100], baseCost: 15000 }, stacjonarna: { uop: [7000, 10000], b2b: [8750, 12250], baseCost: 15000 } },
+      Mid: { zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 }, hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 }, stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 } },
+      Senior: { zdalna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 30000 }, hybrydowa: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 30000 }, stacjonarna: { uop: [16000, 24000], b2b: [17500, 28000], baseCost: 30000 } }
     },
     "Frontend Developer": {
-      Junior: {
-        zdalna: { uop: [7500, 11000], b2b: [9625, 13125], baseCost: 14000 },
-        hybrydowa: { uop: [7000, 10500], b2b: [8750, 12250], baseCost: 14000 },
-        stacjonarna: { uop: [6500, 10000], b2b: [7875, 11375], baseCost: 14000 }
-      },
-      Mid: {
-        zdalna: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 19000 },
-        hybrydowa: { uop: [10500, 16000], b2b: [12250, 18375], baseCost: 19000 },
-        stacjonarna: { uop: [10000, 15000], b2b: [11375, 17500], baseCost: 19000 }
-      },
-      Senior: {
-        zdalna: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 28000 },
-        hybrydowa: { uop: [16000, 24000], b2b: [18375, 29750], baseCost: 28000 },
-        stacjonarna: { uop: [15000, 22000], b2b: [17500, 28000], baseCost: 28000 }
-      }
+      Junior: { zdalna: { uop: [7500, 11000], b2b: [9625, 13125], baseCost: 14000 }, hybrydowa: { uop: [7000, 10500], b2b: [8750, 12250], baseCost: 14000 }, stacjonarna: { uop: [6500, 10000], b2b: [7875, 11375], baseCost: 14000 } },
+      Mid: { zdalna: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 19000 }, hybrydowa: { uop: [10500, 16000], b2b: [12250, 18375], baseCost: 19000 }, stacjonarna: { uop: [10000, 15000], b2b: [11375, 17500], baseCost: 19000 } },
+      Senior: { zdalna: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 28000 }, hybrydowa: { uop: [16000, 24000], b2b: [18375, 29750], baseCost: 28000 }, stacjonarna: { uop: [15000, 22000], b2b: [17500, 28000], baseCost: 28000 } }
+    },
+    "Mobile Developer": {
+      Junior: { zdalna: { uop: [8000, 12000], b2b: [10500, 14000], baseCost: 15000 }, hybrydowa: { uop: [7500, 11000], b2b: [9600, 13100], baseCost: 15000 }, stacjonarna: { uop: [7000, 10000], b2b: [8750, 12250], baseCost: 15000 } },
+      Mid: { zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 }, hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 }, stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 } },
+      Senior: { zdalna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 30000 }, hybrydowa: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 30000 }, stacjonarna: { uop: [16000, 24000], b2b: [17500, 28000], baseCost: 30000 } }
+    },
+    "Tester manualny": {
+      Junior: { zdalna: { uop: [5000, 8000], b2b: [6125, 9625], baseCost: 10000 }, hybrydowa: { uop: [4500, 7500], b2b: [5250, 8750], baseCost: 10000 }, stacjonarna: { uop: [4000, 7000], b2b: [4375, 7875], baseCost: 10000 } },
+      Mid: { zdalna: { uop: [8000, 12000], b2b: [9625, 14000], baseCost: 15000 }, hybrydowa: { uop: [7500, 11000], b2b: [8750, 13125], baseCost: 15000 }, stacjonarna: { uop: [7000, 10000], b2b: [7875, 12250], baseCost: 15000 } },
+      Senior: { zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 }, hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 }, stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 } }
+    },
+    "Tester automatyzujacy": {
+      Junior: { zdalna: { uop: [7000, 11000], b2b: [8750, 13125], baseCost: 13000 }, hybrydowa: { uop: [6500, 10500], b2b: [7875, 12250], baseCost: 13000 }, stacjonarna: { uop: [6000, 10000], b2b: [7000, 11375], baseCost: 13000 } },
+      Mid: { zdalna: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 18000 }, hybrydowa: { uop: [10500, 16000], b2b: [12250, 18375], baseCost: 18000 }, stacjonarna: { uop: [10000, 15000], b2b: [11375, 17500], baseCost: 18000 } },
+      Senior: { zdalna: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 27000 }, hybrydowa: { uop: [16000, 24000], b2b: [18375, 29750], baseCost: 27000 }, stacjonarna: { uop: [15000, 22000], b2b: [17500, 28000], baseCost: 27000 } }
+    },
+    "IT Administrator": {
+      Junior: { zdalna: { uop: [6000, 9000], b2b: [7000, 10500], baseCost: 12000 }, hybrydowa: { uop: [5500, 8500], b2b: [6125, 9625], baseCost: 12000 }, stacjonarna: { uop: [5000, 8000], b2b: [5250, 8750], baseCost: 12000 } },
+      Mid: { zdalna: { uop: [9000, 14000], b2b: [10500, 16625], baseCost: 17000 }, hybrydowa: { uop: [8500, 13000], b2b: [9625, 15750], baseCost: 17000 }, stacjonarna: { uop: [8000, 12000], b2b: [8750, 14875], baseCost: 17000 } },
+      Senior: { zdalna: { uop: [14000, 22000], b2b: [16625, 28000], baseCost: 25000 }, hybrydowa: { uop: [13000, 20000], b2b: [15750, 26250], baseCost: 25000 }, stacjonarna: { uop: [12000, 18000], b2b: [14875, 24500], baseCost: 25000 } }
     },
     "DevOps Engineer": {
-      Junior: { 
-        zdalna: { uop: [9000, 13000], b2b: [11375, 14875], baseCost: 16000 },
-        hybrydowa: { uop: [8500, 12500], b2b: [10500, 14000], baseCost: 16000 },
-        stacjonarna: { uop: [8000, 12000], b2b: [9625, 13125], baseCost: 16000 }
-      },
-      Mid: {
-        zdalna: { uop: [13000, 20000], b2b: [14875, 22750], baseCost: 22000 },
-        hybrydowa: { uop: [12500, 19000], b2b: [14000, 21875], baseCost: 22000 },
-        stacjonarna: { uop: [12000, 18000], b2b: [13125, 21000], baseCost: 22000 }
-      },
-      Senior: {
-        zdalna: { uop: [20000, 32000], b2b: [22750, 38500], baseCost: 35000 },
-        hybrydowa: { uop: [19000, 30000], b2b: [21875, 36750], baseCost: 35000 },
-        stacjonarna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 35000 }
-      }
+      Junior: { zdalna: { uop: [9000, 13000], b2b: [11375, 14875], baseCost: 16000 }, hybrydowa: { uop: [8500, 12500], b2b: [10500, 14000], baseCost: 16000 }, stacjonarna: { uop: [8000, 12000], b2b: [9625, 13125], baseCost: 16000 } },
+      Mid: { zdalna: { uop: [13000, 20000], b2b: [14875, 22750], baseCost: 22000 }, hybrydowa: { uop: [12500, 19000], b2b: [14000, 21875], baseCost: 22000 }, stacjonarna: { uop: [12000, 18000], b2b: [13125, 21000], baseCost: 22000 } },
+      Senior: { zdalna: { uop: [20000, 32000], b2b: [22750, 38500], baseCost: 35000 }, hybrydowa: { uop: [19000, 30000], b2b: [21875, 36750], baseCost: 35000 }, stacjonarna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 35000 } }
     },
-    "QA Engineer": {
-      Junior: {
-        zdalna: { uop: [6500, 9500], b2b: [7875, 11375], baseCost: 12000 },
-        hybrydowa: { uop: [6000, 9000], b2b: [7000, 10500], baseCost: 12000 },
-        stacjonarna: { uop: [5500, 8500], b2b: [6125, 9625], baseCost: 12000 }
-      },
-      Mid: {
-        zdalna: { uop: [9500, 15000], b2b: [11375, 17500], baseCost: 17000 },
-        hybrydowa: { uop: [9000, 14000], b2b: [10500, 16625], baseCost: 17000 },
-        stacjonarna: { uop: [8500, 13000], b2b: [9625, 15750], baseCost: 17000 }
-      },
-      Senior: {
-        zdalna: { uop: [15000, 24000], b2b: [17500, 29750], baseCost: 26000 },
-        hybrydowa: { uop: [14000, 22000], b2b: [16625, 28000], baseCost: 26000 },
-        stacjonarna: { uop: [13000, 20000], b2b: [15750, 26250], baseCost: 26000 }
-      }
+    "Security Engineer": {
+      Junior: { zdalna: { uop: [9000, 13000], b2b: [11375, 14875], baseCost: 16000 }, hybrydowa: { uop: [8500, 12500], b2b: [10500, 14000], baseCost: 16000 }, stacjonarna: { uop: [8000, 12000], b2b: [9625, 13125], baseCost: 16000 } },
+      Mid: { zdalna: { uop: [13000, 20000], b2b: [14875, 22750], baseCost: 22000 }, hybrydowa: { uop: [12500, 19000], b2b: [14000, 21875], baseCost: 22000 }, stacjonarna: { uop: [12000, 18000], b2b: [13125, 21000], baseCost: 22000 } },
+      Senior: { zdalna: { uop: [20000, 32000], b2b: [22750, 38500], baseCost: 35000 }, hybrydowa: { uop: [19000, 30000], b2b: [21875, 36750], baseCost: 35000 }, stacjonarna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 35000 } }
+    },
+    "SAP Consultant": {
+      Junior: { zdalna: { uop: [8000, 12000], b2b: [10500, 14000], baseCost: 15000 }, hybrydowa: { uop: [7500, 11000], b2b: [9600, 13100], baseCost: 15000 }, stacjonarna: { uop: [7000, 10000], b2b: [8750, 12250], baseCost: 15000 } },
+      Mid: { zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 }, hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 }, stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 } },
+      Senior: { zdalna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 30000 }, hybrydowa: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 30000 }, stacjonarna: { uop: [16000, 24000], b2b: [17500, 28000], baseCost: 30000 } }
+    },
+    "ABAP Developer": {
+      Junior: { zdalna: { uop: [7000, 11000], b2b: [8750, 13125], baseCost: 14000 }, hybrydowa: { uop: [6500, 10500], b2b: [7875, 12250], baseCost: 14000 }, stacjonarna: { uop: [6000, 10000], b2b: [7000, 11375], baseCost: 14000 } },
+      Mid: { zdalna: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 19000 }, hybrydowa: { uop: [10500, 16000], b2b: [12250, 18375], baseCost: 19000 }, stacjonarna: { uop: [10000, 15000], b2b: [11375, 17500], baseCost: 19000 } },
+      Senior: { zdalna: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 28000 }, hybrydowa: { uop: [16000, 24000], b2b: [18375, 29750], baseCost: 28000 }, stacjonarna: { uop: [15000, 22000], b2b: [17500, 28000], baseCost: 28000 } }
+    },
+    "Scrum Master": {
+      Junior: { zdalna: { uop: [7000, 11000], b2b: [8750, 13125], baseCost: 14000 }, hybrydowa: { uop: [6500, 10500], b2b: [7875, 12250], baseCost: 14000 }, stacjonarna: { uop: [6000, 10000], b2b: [7000, 11375], baseCost: 14000 } },
+      Mid: { zdalna: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 19000 }, hybrydowa: { uop: [10500, 16000], b2b: [12250, 18375], baseCost: 19000 }, stacjonarna: { uop: [10000, 15000], b2b: [11375, 17500], baseCost: 19000 } },
+      Senior: { zdalna: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 28000 }, hybrydowa: { uop: [16000, 24000], b2b: [18375, 29750], baseCost: 28000 }, stacjonarna: { uop: [15000, 22000], b2b: [17500, 28000], baseCost: 28000 } }
+    },
+    "Product Owner": {
+      Junior: { zdalna: { uop: [8000, 12000], b2b: [10500, 14000], baseCost: 15000 }, hybrydowa: { uop: [7500, 11000], b2b: [9600, 13100], baseCost: 15000 }, stacjonarna: { uop: [7000, 10000], b2b: [8750, 12250], baseCost: 15000 } },
+      Mid: { zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 }, hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 }, stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 } },
+      Senior: { zdalna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 30000 }, hybrydowa: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 30000 }, stacjonarna: { uop: [16000, 24000], b2b: [17500, 28000], baseCost: 30000 } }
+    },
+    "Analityk Biznesowy": {
+      Junior: { zdalna: { uop: [7000, 11000], b2b: [8750, 13125], baseCost: 14000 }, hybrydowa: { uop: [6500, 10500], b2b: [7875, 12250], baseCost: 14000 }, stacjonarna: { uop: [6000, 10000], b2b: [7000, 11375], baseCost: 14000 } },
+      Mid: { zdalna: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 19000 }, hybrydowa: { uop: [10500, 16000], b2b: [12250, 18375], baseCost: 19000 }, stacjonarna: { uop: [10000, 15000], b2b: [11375, 17500], baseCost: 19000 } },
+      Senior: { zdalna: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 28000 }, hybrydowa: { uop: [16000, 24000], b2b: [18375, 29750], baseCost: 28000 }, stacjonarna: { uop: [15000, 22000], b2b: [17500, 28000], baseCost: 28000 } }
+    },
+    "Analityk Systemowy": {
+      Junior: { zdalna: { uop: [8000, 12000], b2b: [10500, 14000], baseCost: 15000 }, hybrydowa: { uop: [7500, 11000], b2b: [9600, 13100], baseCost: 15000 }, stacjonarna: { uop: [7000, 10000], b2b: [8750, 12250], baseCost: 15000 } },
+      Mid: { zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 }, hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 }, stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 } },
+      Senior: { zdalna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 30000 }, hybrydowa: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 30000 }, stacjonarna: { uop: [16000, 24000], b2b: [17500, 28000], baseCost: 30000 } }
+    },
+    "Project Manager": {
+      Junior: { zdalna: { uop: [8000, 12000], b2b: [10500, 14000], baseCost: 15000 }, hybrydowa: { uop: [7500, 11000], b2b: [9600, 13100], baseCost: 15000 }, stacjonarna: { uop: [7000, 10000], b2b: [8750, 12250], baseCost: 15000 } },
+      Mid: { zdalna: { uop: [12000, 18000], b2b: [14000, 21000], baseCost: 20000 }, hybrydowa: { uop: [11000, 17000], b2b: [13125, 19250], baseCost: 20000 }, stacjonarna: { uop: [10000, 16000], b2b: [12250, 17500], baseCost: 20000 } },
+      Senior: { zdalna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 30000 }, hybrydowa: { uop: [17000, 26000], b2b: [19250, 31500], baseCost: 30000 }, stacjonarna: { uop: [16000, 24000], b2b: [17500, 28000], baseCost: 30000 } }
+    },
+    "Data Engineer": {
+      Junior: { zdalna: { uop: [9000, 13000], b2b: [11375, 14875], baseCost: 16000 }, hybrydowa: { uop: [8500, 12500], b2b: [10500, 14000], baseCost: 16000 }, stacjonarna: { uop: [8000, 12000], b2b: [9625, 13125], baseCost: 16000 } },
+      Mid: { zdalna: { uop: [13000, 20000], b2b: [14875, 22750], baseCost: 22000 }, hybrydowa: { uop: [12500, 19000], b2b: [14000, 21875], baseCost: 22000 }, stacjonarna: { uop: [12000, 18000], b2b: [13125, 21000], baseCost: 22000 } },
+      Senior: { zdalna: { uop: [20000, 32000], b2b: [22750, 38500], baseCost: 35000 }, hybrydowa: { uop: [19000, 30000], b2b: [21875, 36750], baseCost: 35000 }, stacjonarna: { uop: [18000, 28000], b2b: [21000, 35000], baseCost: 35000 } }
+    },
+    "Solution Architect": {
+      Junior: { zdalna: { uop: [10000, 15000], b2b: [12250, 17500], baseCost: 18000 }, hybrydowa: { uop: [9500, 14000], b2b: [11375, 16625], baseCost: 18000 }, stacjonarna: { uop: [9000, 13000], b2b: [10500, 15750], baseCost: 18000 } },
+      Mid: { zdalna: { uop: [15000, 22000], b2b: [17500, 26250], baseCost: 25000 }, hybrydowa: { uop: [14000, 20000], b2b: [16625, 24500], baseCost: 25000 }, stacjonarna: { uop: [13000, 18000], b2b: [15750, 22750], baseCost: 25000 } },
+      Senior: { zdalna: { uop: [22000, 35000], b2b: [26250, 43750], baseCost: 40000 }, hybrydowa: { uop: [20000, 32000], b2b: [24500, 42000], baseCost: 40000 }, stacjonarna: { uop: [18000, 30000], b2b: [22750, 40250], baseCost: 40000 } }
     }
   };
 
@@ -141,42 +194,78 @@ const SalaryCalculator = () => {
   }
 
   return (
-    <section id="calculator" className="py-16 bg-background">
+    <section 
+      id="calculator" 
+      className="py-16"
+      style={{ backgroundColor: colors.bgSecondary }}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-                     <h2 className="text-4xl font-bold mb-4">Kalkulator procesu rekrutacyjnego</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.textPrimary }}>
+            Kalkulator procesu rekrutacyjnego
+          </h2>
+          <p className="text-xl max-w-2xl mx-auto" style={{ color: colors.textSecondary }}>
             Sprawdź aktualne stawki dla specjalistów IT w Polsce oraz koszt rekrutacji. 
             Dane oparte na naszym doświadczeniu i obecnych trendach rynkowych.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="shadow-elegant">
+          <Card 
+            className="shadow-lg"
+            style={{ 
+              boxShadow: `0 10px 30px -10px ${colors.primaryBlue}30`,
+              border: `1px solid ${colors.borderLight}`
+            }}
+          >
             <CardHeader>
-                          <CardTitle className="text-2xl text-center">
-              Wybierz parametry stanowiska i oblicz koszt rekrutacji
-            </CardTitle>
+              <CardTitle className="text-2xl text-center" style={{ color: colors.textPrimary }}>
+                Wybierz parametry stanowiska i oblicz koszt rekrutacji
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-sm font-medium mb-2">Rola</label>
+                  <label className="block text-sm font-medium mb-2" style={{ color: colors.textPrimary }}>
+                    Rola
+                  </label>
                   <Select value={role} onValueChange={setRole}>
                     <SelectTrigger>
                       <SelectValue placeholder="Wybierz rolę" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="Backend Developer">Backend Developer</SelectItem>
+                      <SelectItem value="Java Developer">Java Developer</SelectItem>
+                      <SelectItem value=".NET Developer">.NET Developer</SelectItem>
+                      <SelectItem value="PHP Developer">PHP Developer</SelectItem>
+                      <SelectItem value="Python Developer">Python Developer</SelectItem>
+                      <SelectItem value="C++ Developer">C++ Developer</SelectItem>
+                      <SelectItem value="Node.js Developer">Node.js Developer</SelectItem>
+                      <SelectItem value="Golang Developer">Golang Developer</SelectItem>
+                      <SelectItem value="Full Stack Developer">Full Stack Developer</SelectItem>
                       <SelectItem value="Frontend Developer">Frontend Developer</SelectItem>
+                      <SelectItem value="Mobile Developer">Mobile Developer</SelectItem>
+                      <SelectItem value="Tester manualny">Tester manualny</SelectItem>
+                      <SelectItem value="Tester automatyzujacy">Tester automatyzujacy</SelectItem>
+                      <SelectItem value="IT Administrator">IT Administrator</SelectItem>
                       <SelectItem value="DevOps Engineer">DevOps Engineer</SelectItem>
-                      <SelectItem value="QA Engineer">QA Engineer</SelectItem>
+                      <SelectItem value="Security Engineer">Security Engineer</SelectItem>
+                      <SelectItem value="SAP Consultant">SAP Consultant</SelectItem>
+                      <SelectItem value="ABAP Developer">ABAP Developer</SelectItem>
+                      <SelectItem value="Scrum Master">Scrum Master</SelectItem>
+                      <SelectItem value="Product Owner">Product Owner</SelectItem>
+                      <SelectItem value="Analityk Biznesowy">Analityk Biznesowy</SelectItem>
+                      <SelectItem value="Analityk Systemowy">Analityk Systemowy</SelectItem>
+                      <SelectItem value="Project Manager">Project Manager</SelectItem>
+                      <SelectItem value="Data Engineer">Data Engineer</SelectItem>
+                      <SelectItem value="Solution Architect">Solution Architect</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Doświadczenie</label>
+                  <label className="block text-sm font-medium mb-2" style={{ color: colors.textPrimary }}>
+                    Doświadczenie
+                  </label>
                   <Select value={experience} onValueChange={setExperience}>
                     <SelectTrigger>
                       <SelectValue placeholder="Wybierz poziom" />
@@ -190,7 +279,9 @@ const SalaryCalculator = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Tryb pracy</label>
+                  <label className="block text-sm font-medium mb-2" style={{ color: colors.textPrimary }}>
+                    Tryb pracy
+                  </label>
                   <Select value={workMode} onValueChange={setWorkMode}>
                     <SelectTrigger>
                       <SelectValue placeholder="Wybierz tryb" />
@@ -204,10 +295,14 @@ const SalaryCalculator = () => {
                 </div>
               </div>
 
-
               {results && (
                 <div className="mt-8 animate-fade-in">
-                  <div className="bg-gradient-primary rounded-lg p-6 text-white">
+                  <div 
+                    className="rounded-lg p-6 text-white"
+                    style={{ 
+                      background: `linear-gradient(135deg, ${colors.primaryBlue} 0%, ${colors.primaryBlueDark} 100%)`
+                    }}
+                  >
                     <h3 className="text-2xl font-semibold mb-6 text-center">
                       Wyniki dla: {results.role} • {results.experience} • {results.workMode}
                     </h3>
@@ -215,7 +310,7 @@ const SalaryCalculator = () => {
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                       <div className="bg-white/10 rounded-lg p-4">
                         <h4 className="text-lg font-semibold mb-3">Umowa o pracę (UoP)</h4>
-                        <div className="text-2xl font-bold text-accent">
+                        <div className="text-2xl font-bold" style={{ color: colors.accentOrange }}>
                           {results.uopMin.toLocaleString()} - {results.uopMax.toLocaleString()} PLN
                         </div>
                         <div className="text-sm opacity-80">brutto miesięcznie</div>
@@ -223,7 +318,7 @@ const SalaryCalculator = () => {
                       
                       <div className="bg-white/10 rounded-lg p-4">
                         <h4 className="text-lg font-semibold mb-3">Kontrakt B2B</h4>
-                        <div className="text-2xl font-bold text-accent">
+                        <div className="text-2xl font-bold" style={{ color: colors.accentOrange }}>
                           {results.b2bMin} - {results.b2bMax} PLN
                         </div>
                         <div className="text-sm opacity-80">netto miesięcznie</div>
@@ -232,7 +327,7 @@ const SalaryCalculator = () => {
                     
                     <div className="bg-white/10 rounded-lg p-4 mb-6">
                       <h4 className="text-lg font-semibold mb-2">Koszt procesu rekrutacji</h4>
-                      <div className="text-xl font-bold text-accent">
+                      <div className="text-xl font-bold" style={{ color: colors.accentOrange }}>
                         {results.recruitmentCost.toLocaleString()} PLN
                       </div>
                       <div className="text-sm opacity-80">
@@ -244,7 +339,12 @@ const SalaryCalculator = () => {
                       <Button 
                         onClick={handleSendInquiry}
                         variant="secondary"
-                        className="bg-white text-primary hover:bg-white/90"
+                        className="transition-all duration-300 hover:shadow-lg"
+                        style={{ 
+                          backgroundColor: colors.white,
+                          color: colors.primaryBlue,
+                          border: 'none'
+                        }}
                       >
                         Wyślij zapytanie
                       </Button>
