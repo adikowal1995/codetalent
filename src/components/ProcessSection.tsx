@@ -29,8 +29,8 @@ const ProcessSection = () => {
     },
     {
       step: "06",
-      title: "Follow-up",
-      description: "Monitorowanie satysfakcji i wsparcie w okresie wdrożenia."
+      title: "Feedback",
+      description: "Informacja zwrotna dla wszystkich stron, monitorowanie satysfakcji i dalsze wsparcie."
     }
   ];
 
@@ -38,7 +38,7 @@ const ProcessSection = () => {
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Nasz Proces Rekrutacji</h2>
+          <h2 className="text-4xl font-bold mb-4">Nasz proces rekrutacji</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Sprawdzony 6-etapowy proces, który gwarantuje znalezienie 
             idealnego kandydata dla Twojej firmy.
@@ -68,12 +68,15 @@ const ProcessSection = () => {
         </div>
 
         <div className="mt-12 bg-gradient-primary rounded-lg p-8 text-white text-center">
-          <h3 className="text-2xl font-semibold mb-4">
+          <h3 className="text-4xl font-semibold mb-4">
             Gwarancja jakości
           </h3>
-          <p className="text-lg opacity-90 max-w-2xl mx-auto">
-            Oferujemy 3-miesięczną gwarancję na każdą rekrutację. 
-            Jeśli kandydat nie spełni oczekiwań, przeprowadzimy proces ponownie bez dodatkowych kosztów.
+          <p className="text-xl opacity-90 max-w-2xl mx-auto">
+            Oferujemy 3-miesięczną gwarancję na każdą rekrutację.
+            <br />
+            Jeśli kandydat nie spełni oczekiwań, przeprowadzimy proces ponownie.
+            <br />
+            Całość realizujemy bez naliczania dodatkowych kosztów.
           </p>
         </div>
       </div>

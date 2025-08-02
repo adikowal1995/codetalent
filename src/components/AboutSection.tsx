@@ -33,22 +33,17 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl font-bold mb-6">O CodeTalent Agency</h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Jesteśmy agencją rekrutacyjną, która specjalizuje się wyłącznie w pozyskiwaniu 
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Jesteśmy agencją rekrutacyjną, która specjalizuje się w pozyskiwaniu 
               najlepszych specjalistów IT. Nasz zespół ma wieloletnie doświadczenie w branży 
               technologicznej i doskonale rozumie potrzeby zarówno kandydatów, jak i pracodawców.
-            </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Nie zajmujemy się outsourcingiem, consultingiem ani body leasingiem. 
-              Koncentrujemy się na tym, co robimy najlepiej - permanent placements, 
-              które tworzą wartość dla wszystkich stron.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center p-4 bg-muted/50 rounded-lg">
                   <div className="text-2xl font-bold text-accent">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-base text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
             </div>

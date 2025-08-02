@@ -29,7 +29,7 @@ const TeamSection = () => {
     <section id="team" className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Nasz Zespół</h2>
+          <h2 className="text-4xl font-bold mb-4">Nasz zespół</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Poznaj ekspertów, którzy pomogą Ci znaleźć idealnych kandydatów. 
             Każdy z nas ma wieloletnie doświadczenie w branży IT.
@@ -68,29 +68,7 @@ const TeamSection = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <div className="bg-gradient-primary rounded-lg p-8 text-white">
-            <h3 className="text-2xl font-semibold mb-4">
-              Dlaczego warto z nami współpracować?
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold text-accent mb-2">15+</div>
-                <div className="text-sm opacity-90">Lat łączonego doświadczenia</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-accent mb-2">200+</div>
-                <div className="text-sm opacity-90">Firm w portfolio</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-accent mb-2">24/7</div>
-                <div className="text-sm opacity-90">Dostępność dla klientów</div>
-              </div>
-            </div>
-          </div>
-        </div>
+                 </div>
       </div>
     </section>
   );

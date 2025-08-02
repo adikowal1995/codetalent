@@ -144,9 +144,9 @@ const SalaryCalculator = () => {
     <section id="calculator" className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Kalkulator Widełek Płacowych</h2>
+                     <h2 className="text-4xl font-bold mb-4">Kalkulator procesu rekrutacyjnego</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Sprawdź aktualne stawki dla specjalistów IT w Polsce. 
+            Sprawdź aktualne stawki dla specjalistów IT w Polsce oraz koszt rekrutacji. 
             Dane oparte na naszym doświadczeniu i obecnych trendach rynkowych.
           </p>
         </div>
@@ -154,9 +154,9 @@ const SalaryCalculator = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="shadow-elegant">
             <CardHeader>
-              <CardTitle className="text-2xl text-center">
-                Wybierz parametry stanowiska
-              </CardTitle>
+                          <CardTitle className="text-2xl text-center">
+              Wybierz parametry stanowiska i oblicz koszt rekrutacji
+            </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid md:grid-cols-3 gap-6">
