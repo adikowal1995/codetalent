@@ -32,5 +32,5 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
-  base: process.env.NODE_ENV === 'production' ? '/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/codetalent/' : '/',
 }));
