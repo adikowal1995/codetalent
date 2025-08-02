@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -98,7 +98,10 @@ const SalaryCalculator = () => {
   };
 
   const calculateSalary = () => {
-    if (!role || !experience || !workMode) return;
+    if (!role || !experience || !workMode) {
+      setResults(null);
+      return;
+    }
     
     const data = salaryData[role]?.[experience]?.[workMode];
     if (!data) return;
@@ -128,6 +131,10 @@ const SalaryCalculator = () => {
   const handleSendInquiry = () => {
     setShowForm(true);
   };
+
+  useEffect(() => {
+    calculateSalary();
+  }, [role, experience, workMode]);
 
   if (showForm && results) {
     return <ContactForm calculatorData={results} onBack={() => setShowForm(false)} />;
@@ -197,15 +204,6 @@ const SalaryCalculator = () => {
                 </div>
               </div>
 
-              <div className="text-center">
-                <Button 
-                  onClick={calculateSalary}
-                  disabled={!role || !experience || !workMode}
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3"
-                >
-                  Oblicz widełki płacowe
-                </Button>
-              </div>
 
               {results && (
                 <div className="mt-8 animate-fade-in">
