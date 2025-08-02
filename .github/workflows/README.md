@@ -5,8 +5,7 @@ This repository includes automated deployment workflows for GitHub Pages.
 ## Workflows
 
 ### Deployment (`deploy.yml`)
-- Automatically deploys on pushes to `main`, `development`, and `production` branches
-- Uses the same build process for all environments
+- Automatically deploys on pushes to `development` branch
 - Simple and straightforward deployment
 
 ## Setup Instructions
@@ -16,20 +15,13 @@ This repository includes automated deployment workflows for GitHub Pages.
 2. Navigate to "Pages" in the sidebar
 3. Under "Source", select "GitHub Actions"
 
-### 2. Configure Environments (Optional)
-1. Go to Settings > Environments
-2. Create environments named "development" and "production"
-3. Configure any required protection rules
-
-### 3. Branch Strategy
-- `main` / `production` → Production deployment
-- `development` → Development deployment
+### 2. Branch Strategy
+- `development` → Main deployment branch
 
 ## Usage
 
 ### Automatic Deployment
-- Push to any of the configured branches to trigger automatic deployment
-- Pull requests will build but not deploy
+- Push to `development` branch to trigger automatic deployment
 
 ### Manual Deployment
 1. Go to Actions tab
@@ -44,8 +36,7 @@ The workflows use the following environment variables:
 
 ## Build Commands
 
-- **Production**: `npm run build`
-- **Development**: `npm run build:dev`
+- **Build**: `npm run build`
 
 ## Troubleshooting
 
