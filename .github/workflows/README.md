@@ -4,16 +4,10 @@ This repository includes automated deployment workflows for GitHub Pages.
 
 ## Workflows
 
-### 1. Basic Deployment (`deploy.yml`)
+### Deployment (`deploy.yml`)
 - Automatically deploys on pushes to `main`, `development`, and `production` branches
 - Uses the same build process for all environments
 - Simple and straightforward deployment
-
-### 2. Advanced Deployment (`deploy-advanced.yml`)
-- Environment-specific builds (development vs production)
-- Manual workflow dispatch option
-- Better concurrency control
-- Deployment notifications
 
 ## Setup Instructions
 
@@ -39,9 +33,8 @@ This repository includes automated deployment workflows for GitHub Pages.
 
 ### Manual Deployment
 1. Go to Actions tab
-2. Select "Advanced Deploy to GitHub Pages"
+2. Select "Deploy to GitHub Pages"
 3. Click "Run workflow"
-4. Choose your target environment
 
 ## Environment Variables
 
