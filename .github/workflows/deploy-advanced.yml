@@ -1,0 +1,116 @@
+name: Advanced Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, development, production ]
+  pull_request:
+    branches: [ main, development, production ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - production
+
+env:
+  NODE_VERSION: '18'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-${{ github.ref_name }}"
+  cancel-in-progress: false
+
+jobs:
+  # Build job with environment-specific configuration
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.set-env.outputs.environment }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Set environment
+        id: set-env
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" || "${{ github.ref }}" == "refs/heads/production" ]]; then
+            echo "environment=production" >> $GITHUB_OUTPUT
+          else
+            echo "environment=development" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build with Vite
+        run: |
+          if [[ "${{ steps.set-env.outputs.environment }}" == "production" ]]; then
+            npm run build
+          else
+            npm run build:dev
+          fi
+        env:
+          CI: false
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  # Production deployment
+  deploy-production:
+    environment:
+      name: production
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production'
+    steps:
+      - name: Deploy to GitHub Pages (Production)
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # Development deployment
+  deploy-development:
+    environment:
+      name: development
+      url: ${{ steps.deployment-dev.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/development'
+    steps:
+      - name: Deploy to GitHub Pages (Development)
+        id: deployment-dev
+        uses: actions/deploy-pages@v4
+
+  # Notification job
+  notify:
+    runs-on: ubuntu-latest
+    needs: [deploy-production, deploy-development]
+    if: always()
+    steps:
+      - name: Notify deployment status
+        run: |
+          if [[ "${{ needs.deploy-production.result }}" == "success" || "${{ needs.deploy-development.result }}" == "success" ]]; then
+            echo "✅ Deployment successful!"
+            echo "Environment: ${{ needs.build.outputs.environment }}"
+          else
+            echo "❌ Deployment failed!"
+          fi 
