@@ -59,7 +59,7 @@ const HeroSection = () => {
            <div className="animate-slide-up">
              <div className="relative">
                <img 
-                 src="/images/heroimage.jpg" 
+                 src={process.env.NODE_ENV === 'production' ? '/codetalent/images/heroimage.jpg' : '/images/heroimage.jpg'} 
                  alt="CodeTalent Hero" 
                  className="w-full h-auto max-w-2xl mx-auto rounded-2xl shadow-2xl animate-float"
                  loading="eager"
