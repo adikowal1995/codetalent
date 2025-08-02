@@ -58,13 +58,19 @@ const HeroSection = () => {
                      {/* Right Column - Hero Image */}
            <div className="animate-slide-up">
              <div className="relative">
-               <img 
-                 src={process.env.NODE_ENV === 'production' ? '/codetalent/images/heroimage.jpg' : '/images/heroimage.jpg'} 
-                 alt="CodeTalent Hero" 
-                 className="w-full h-auto max-w-2xl mx-auto rounded-2xl shadow-2xl animate-float"
-                 loading="eager"
-                 decoding="async"
-               />
+               <picture>
+                 <source 
+                   srcSet={process.env.NODE_ENV === 'production' ? '/codetalent/images/heroimage.webp' : '/images/heroimage.webp'} 
+                   type="image/webp" 
+                 />
+                 <img 
+                   src={process.env.NODE_ENV === 'production' ? '/codetalent/images/heroimage.jpg' : '/images/heroimage.jpg'} 
+                   alt="CodeTalent Hero" 
+                   className="w-full h-auto max-w-2xl mx-auto rounded-2xl shadow-2xl animate-float"
+                   loading="eager"
+                   decoding="async"
+                 />
+               </picture>
              </div>
            </div>
         </div>
