@@ -311,7 +311,7 @@ const SalaryCalculator = () => {
                       <div className="bg-white/10 rounded-lg p-4">
                         <h4 className="text-lg font-semibold mb-3">Umowa o pracę (UoP)</h4>
                         <div className="text-2xl font-bold" style={{ color: colors.accentOrange }}>
-                          {results.uopMin.toLocaleString()} - {results.uopMax.toLocaleString()} PLN
+                          {results.uopMin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} - {results.uopMax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} PLN
                         </div>
                         <div className="text-sm opacity-80">brutto miesięcznie</div>
                       </div>
@@ -319,7 +319,7 @@ const SalaryCalculator = () => {
                       <div className="bg-white/10 rounded-lg p-4">
                         <h4 className="text-lg font-semibold mb-3">Kontrakt B2B</h4>
                         <div className="text-2xl font-bold" style={{ color: colors.accentOrange }}>
-                          {results.b2bMin} - {results.b2bMax} PLN
+                          {results.b2bMin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} - {results.b2bMax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} PLN
                         </div>
                         <div className="text-sm opacity-80">netto miesięcznie</div>
                       </div>

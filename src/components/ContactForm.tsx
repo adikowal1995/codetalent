@@ -84,7 +84,8 @@ const ContactForm = ({ calculatorData, onBack }: ContactFormProps) => {
                 </p>
                 <p className="text-sm text-muted-foreground mt-2">
                   <strong>UoP:</strong> {calculatorData.uopMin.toLocaleString()} - {calculatorData.uopMax.toLocaleString()} PLN • 
-                  <strong> B2B:</strong> {calculatorData.b2bMin} - {calculatorData.b2bMax} PLN/h
+                  <strong> B2B:</strong> {calculatorData.b2bMin.toLocaleString()} - {calculatorData.b2bMax.toLocaleString()} PLN • 
+                  <strong> Koszt rekrutacji:</strong> {calculatorData.recruitmentCost.toLocaleString()} PLN
                 </p>
               </div>
             </CardHeader>
