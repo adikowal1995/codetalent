@@ -164,6 +164,13 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
 
+      - name: Output Website URL
+        run: |
+          echo "🌐 Website deployed successfully!"
+          echo "📱 Development URL: https://adikowal1995.github.io/codetalent/"
+          echo "🔗 GitHub Pages URL: https://${{ github.repository_owner }}.github.io/codetalent/"
+          echo "📊 GitHub Pages Status: https://github.com/${{ github.repository }}/actions"
+
   deploy-production:
     name: Deploy to GitHub Pages (Production)
     runs-on: ubuntu-latest
@@ -191,9 +198,56 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
 
+      - name: Output Website URL
+        run: |
+          echo "🌐 Website deployed successfully!"
+          echo "📱 Production URL: https://adikowal1995.github.io/codetalent/"
+          echo "🔗 GitHub Pages URL: https://${{ github.repository_owner }}.github.io/codetalent/"
+          echo "📊 GitHub Pages Status: https://github.com/${{ github.repository }}/actions"
+
   # Performance and Quality Metrics
+  performance-test-development:
+    name: Performance Test (Development)
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/development'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-files
+          path: dist/
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@v0.12.x
+
+      - name: Run Lighthouse CI
+        run: |
+          if [ -n "${{ secrets.LHCI_GITHUB_APP_TOKEN }}" ]; then
+            lhci autorun
+          else
+            echo "LHCI_GITHUB_APP_TOKEN not configured, using temporary storage"
+            lhci autorun --upload.target=temporary-public-storage
+          fi
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.sha }}
+          LHCI_BUILD_CONTEXT__COMMIT_TIME: ${{ github.event.head_commit.timestamp }}
+
   performance-test:
-    name: Performance Test
+    name: Performance Test (Production)
     runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/main'
@@ -221,11 +275,38 @@ jobs:
 
       - name: Run Lighthouse CI
         run: |
-          lhci autorun
+          if [ -n "${{ secrets.LHCI_GITHUB_APP_TOKEN }}" ]; then
+            lhci autorun
+          else
+            echo "LHCI_GITHUB_APP_TOKEN not configured, using temporary storage"
+            lhci autorun --upload.target=temporary-public-storage
+          fi
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          LHCI_BUILD_CONTEXT__CURRENT_HASH: ${{ github.sha }}
+          LHCI_BUILD_CONTEXT__COMMIT_TIME: ${{ github.event.head_commit.timestamp }}
 
-  # Notifications
+  # Summary and Notifications
+  summary:
+    name: Deployment Summary
+    runs-on: ubuntu-latest
+    needs: [deploy-development, deploy-production]
+    if: always()
+    steps:
+      - name: Show Deployment URLs
+        run: |
+          echo "🎉 Deployment Summary"
+          echo "=================="
+          echo "📱 Website URL: https://adikowal1995.github.io/codetalent/"
+          echo "🔗 GitHub Pages: https://${{ github.repository_owner }}.github.io/codetalent/"
+          echo "📊 Repository: https://github.com/${{ github.repository }}"
+          echo "🚀 Actions: https://github.com/${{ github.repository }}/actions"
+          echo ""
+          echo "If the website is not accessible, check:"
+          echo "1. GitHub Pages settings (Settings > Pages)"
+          echo "2. Repository visibility (public required for free GitHub Pages)"
+          echo "3. Recent workflow runs for any errors"
+
   notify:
     name: Notify on Failure
     runs-on: ubuntu-latest

@@ -18,7 +18,10 @@
     "test:coverage": "vitest run --coverage",
     "preview": "vite preview",
     "pre-deploy": "npm run lint && npm run test:run && npm run build",
-    "deploy": "scripts/deploy.bat"
+    "deploy": "scripts/deploy.bat",
+    "lighthouse": "lighthouse-ci autorun",
+    "lighthouse:preview": "npm run preview & sleep 5 && lighthouse-ci autorun",
+    "prepare": "husky"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -87,7 +90,9 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "husky": "^9.1.7",
     "jsdom": "^26.1.0",
+    "lint-staged": "^15.2.2",
     "lovable-tagger": "^1.1.7",
     "postcss": "^8.4.47",
     "prettier": "^3.6.2",
@@ -97,5 +102,14 @@
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
     "vitest": "^3.2.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
   }
 }

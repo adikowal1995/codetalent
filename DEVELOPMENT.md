@@ -168,7 +168,15 @@ git commit -m "feat: add your feature"
 
 ### 2. Pre-commit Checks
 
-The project includes pre-commit hooks that run:
+The project includes pre-commit hooks that run automatically on every commit:
+
+- **Lint-staged**: Runs ESLint and Prettier on staged files
+- **Custom pre-commit script**: Runs full linting, tests, and build verification
+
+To manually run pre-commit checks:
+```bash
+npm run lint && npm run test:run && npm run build
+```
 
 - ESLint
 - Tests
@@ -226,8 +234,14 @@ npm run build
 # Build for performance testing
 npm run build
 
-# Run Lighthouse CI (if configured)
-npx lighthouse-ci autorun
+# Run Lighthouse CI locally
+npm run lighthouse
+
+# Run Lighthouse CI with preview server
+npm run lighthouse:preview
+
+# Run Lighthouse CI with build
+npm run lighthouse:build
 ```
 
 ## 📊 Quality Metrics
