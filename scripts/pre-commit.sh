@@ -14,6 +14,15 @@ if [ $? -ne 0 ]; then
 fi
 echo "✅ ESLint passed"
 
+# Run Prettier check
+echo "🎨 Running Prettier check..."
+npx prettier --check .
+if [ $? -ne 0 ]; then
+    echo "❌ Prettier check failed. Please run 'npx prettier --write .' to fix formatting issues."
+    exit 1
+fi
+echo "✅ Prettier check passed"
+
 # Run tests
 echo "🧪 Running tests..."
 npm run test:run
