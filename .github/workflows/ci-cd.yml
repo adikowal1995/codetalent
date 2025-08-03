@@ -1,18 +1,24 @@
-name: CI/CD Pipeline
+name: CI/CD Pipeline with GitHub Pages Deployment
 
 on:
   push:
     branches: [ main, development ]
   pull_request:
     branches: [ main, development ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  # Linting Job
+  # Quality Assurance Jobs
   lint:
-    name: Lint Code
+    name: Lint and Format Check
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -27,13 +33,14 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
-  # Testing Job
+      - name: Run Prettier check
+        run: npx prettier --check .
+
   test:
     name: Run Tests
     runs-on: ubuntu-latest
-    needs: lint
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -51,85 +58,19 @@ jobs:
       - name: Run test coverage
         run: npm run test:coverage
 
-  # Build Job
-  build:
-    name: Build Application
-    runs-on: ubuntu-latest
-    needs: [lint, test]
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v3
         with:
-          node-version: '18'
-          cache: 'npm'
+          file: ./coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build application
-        run: npm run build
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-files
-          path: dist/
-
-  # Deploy to Development (on push to development branch)
-  deploy-development:
-    name: Deploy to Development
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/development'
-    environment: development
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: build-files
-          path: dist/
-
-      - name: Deploy to development environment
-        run: |
-          echo "Deploying to development environment..."
-          # Add your deployment commands here
-          # Example: rsync, scp, or cloud deployment commands
-
-  # Deploy to Production (on push to main branch)
-  deploy-production:
-    name: Deploy to Production
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    environment: production
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: build-files
-          path: dist/
-
-      - name: Deploy to production environment
-        run: |
-          echo "Deploying to production environment..."
-          # Add your deployment commands here
-          # Example: rsync, scp, or cloud deployment commands
-
-  # Security Audit
   security-audit:
     name: Security Audit
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -144,14 +85,16 @@ jobs:
       - name: Run security audit
         run: npm audit --audit-level=moderate
 
-  # Performance Test (optional)
-  performance-test:
-    name: Performance Test
+      - name: Run npm outdated check
+        run: npm outdated || true
+
+  # Build and Deploy Jobs
+  build:
+    name: Build Application
     runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/main'
+    needs: [lint, test, security-audit]
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -165,8 +108,130 @@ jobs:
 
       - name: Build application
         run: npm run build
+        env:
+          CI: false
+          NODE_ENV: production
+          VITE_BASE_URL: '/codetalent/'
+
+      - name: Copy 404.html
+        run: cp public/404.html dist/
+
+      - name: List build output
+        run: ls -la dist/
+
+      - name: Verify build
+        run: |
+          if [ ! -f "dist/index.html" ]; then
+            echo "Build failed: index.html not found"
+            exit 1
+          fi
+          echo "Build verification passed"
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-files
+          path: dist/
+          retention-days: 1
+
+  # Deploy to GitHub Pages
+  deploy-development:
+    name: Deploy to GitHub Pages (Development)
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/development'
+    environment: development
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+          path: dist/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+
+  deploy-production:
+    name: Deploy to GitHub Pages (Production)
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+          path: dist/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+
+  # Performance and Quality Metrics
+  performance-test:
+    name: Performance Test
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
+          path: dist/
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.12.x
 
       - name: Run Lighthouse CI
         run: |
-          echo "Running performance tests..."
-          # Add Lighthouse CI or other performance testing tools 
+          lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+  # Notifications
+  notify:
+    name: Notify on Failure
+    runs-on: ubuntu-latest
+    needs: [lint, test, security-audit, build, deploy-development, deploy-production]
+    if: failure()
+    steps:
+      - name: Notify failure
+        run: |
+          echo "❌ One or more jobs failed in the CI/CD pipeline"
+          echo "Please check the workflow logs for details"
+          exit 1 
