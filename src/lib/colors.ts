@@ -1,3 +1,5 @@
+// This file is kept for backward compatibility
+// New components should use the theme context instead
 export const colors = {
   // Primary Brand Colors
   primaryBlue: '#2563eb',
