@@ -11,7 +11,9 @@ const HeroSection = () => {
     <section 
       className="min-h-screen flex items-center py-16"
       style={{ 
-        background: `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
+        background: currentTheme.name === "Theme 3" 
+          ? `linear-gradient(135deg, #1e3a8a 0%, ${currentTheme.colors.primaryBlue} 30%, ${currentTheme.colors.secondaryGray} 70%, ${currentTheme.colors.accentGreen} 100%)`
+          : `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
         color: currentTheme.colors.textLight 
       }}
     >
