@@ -58,21 +58,6 @@ const HeroSection = () => {
                 Umów się na spotkanie
               </Button>
             </div>
-            
-            <div className="flex justify-center lg:justify-start gap-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold" style={{ color: currentTheme.colors.accentOrange }}>500+</div>
-                <div className="text-sm" style={{ color: currentTheme.colors.textLight + 'B3' }}>Rekrutacji</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold" style={{ color: currentTheme.colors.accentOrange }}>95%</div>
-                <div className="text-sm" style={{ color: currentTheme.colors.textLight + 'B3' }}>Skuteczność</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold" style={{ color: currentTheme.colors.accentOrange }}>24h</div>
-                <div className="text-sm" style={{ color: currentTheme.colors.textLight + 'B3' }}>Pierwsza odpowiedź</div>
-              </div>
-            </div>
           </div>
           
           {/* Right Column - Hero Image */}
@@ -111,7 +96,7 @@ const HeroSection = () => {
               document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            <span className="mr-2">Poznaj nasze możliwości</span>
+            <span className="mr-2">Co możemy dla Ciebie zrobić</span>
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
               width="24" 

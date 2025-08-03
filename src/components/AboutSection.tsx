@@ -5,9 +5,9 @@ const AboutSection = () => {
   const { currentTheme } = useTheme();
   const stats = [
     { value: "500+", label: "Zakończonych rekrutacji" },
-    { value: "95%", label: "Skuteczność procesu" },
+    { value: "10 dni", label: "Średni czas realizacji" },
     { value: "24h", label: "Średni czas odpowiedzi" },
-    { value: "3 lata", label: "Doświadczenia na rynku" }
+    { value: "12+ lat", label: "Doświadczenia na rynku" }
   ];
 
   const values = [

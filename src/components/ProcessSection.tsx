@@ -11,7 +11,7 @@ const ProcessSection = () => {
     },
     {
       step: "02", 
-      title: "Sourcing kandydatów",
+      title: "Sourcing i rekrutacja",
       description: "Aktywne poszukiwanie specjalistów w naszej bazie i na rynku pracy."
     },
     {
