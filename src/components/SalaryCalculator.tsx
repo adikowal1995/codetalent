@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import ContactForm from "./ContactForm";
-import { colors } from "@/lib/colors";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export interface CalculatorData {
   role: string;
@@ -17,6 +17,7 @@ export interface CalculatorData {
 }
 
 const SalaryCalculator = () => {
+  const { currentTheme } = useTheme();
   const [role, setRole] = useState("");
   const [experience, setExperience] = useState("");
   const [workMode, setWorkMode] = useState("");
@@ -197,14 +198,14 @@ const SalaryCalculator = () => {
     <section 
       id="calculator" 
       className="py-16"
-      style={{ backgroundColor: colors.bgSecondary }}
+      style={{ backgroundColor: currentTheme.colors.bgSecondary }}
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4" style={{ color: colors.textPrimary }}>
+          <h2 className="text-4xl font-bold mb-4" style={{ color: currentTheme.colors.textPrimary }}>
             Kalkulator procesu rekrutacyjnego
           </h2>
-          <p className="text-xl max-w-2xl mx-auto" style={{ color: colors.textSecondary }}>
+          <p className="text-xl max-w-2xl mx-auto" style={{ color: currentTheme.colors.textSecondary }}>
             Sprawdź aktualne stawki dla specjalistów IT w Polsce oraz koszt rekrutacji. 
             Dane oparte na naszym doświadczeniu i obecnych trendach rynkowych.
           </p>
@@ -214,19 +215,19 @@ const SalaryCalculator = () => {
           <Card 
             className="shadow-lg"
             style={{ 
-              boxShadow: `0 10px 30px -10px ${colors.primaryBlue}30`,
-              border: `1px solid ${colors.borderLight}`
+              boxShadow: `0 10px 30px -10px ${currentTheme.colors.primaryBlue}30`,
+              border: `1px solid ${currentTheme.colors.borderLight}`
             }}
           >
             <CardHeader>
-              <CardTitle className="text-2xl text-center" style={{ color: colors.textPrimary }}>
+              <CardTitle className="text-2xl text-center" style={{ color: currentTheme.colors.textPrimary }}>
               Wybierz parametry stanowiska i oblicz koszt rekrutacji
             </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
-                  <label className="block text-sm font-medium mb-2" style={{ color: colors.textPrimary }}>
+                  <label className="block text-sm font-medium mb-2" style={{ color: currentTheme.colors.textPrimary }}>
                     Rola
                   </label>
                   <Select value={role} onValueChange={setRole}>
@@ -263,7 +264,7 @@ const SalaryCalculator = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2" style={{ color: colors.textPrimary }}>
+                  <label className="block text-sm font-medium mb-2" style={{ color: currentTheme.colors.textPrimary }}>
                     Doświadczenie
                   </label>
                   <Select value={experience} onValueChange={setExperience}>
@@ -279,7 +280,7 @@ const SalaryCalculator = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2" style={{ color: colors.textPrimary }}>
+                  <label className="block text-sm font-medium mb-2" style={{ color: currentTheme.colors.textPrimary }}>
                     Tryb pracy
                   </label>
                   <Select value={workMode} onValueChange={setWorkMode}>
@@ -300,7 +301,7 @@ const SalaryCalculator = () => {
                   <div 
                     className="rounded-lg p-6 text-white"
                     style={{ 
-                      background: `linear-gradient(135deg, ${colors.primaryBlue} 0%, ${colors.primaryBlueDark} 100%)`
+                      background: `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`
                     }}
                   >
                     <h3 className="text-2xl font-semibold mb-6 text-center">
@@ -310,7 +311,7 @@ const SalaryCalculator = () => {
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                       <div className="bg-white/10 rounded-lg p-4">
                         <h4 className="text-lg font-semibold mb-3">Umowa o pracę (UoP)</h4>
-                        <div className="text-2xl font-bold" style={{ color: colors.accentOrange }}>
+                        <div className="text-2xl font-bold" style={{ color: currentTheme.colors.accentOrange }}>
                           {results.uopMin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} - {results.uopMax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} PLN
                         </div>
                         <div className="text-sm opacity-80">brutto miesięcznie</div>
@@ -318,7 +319,7 @@ const SalaryCalculator = () => {
                       
                       <div className="bg-white/10 rounded-lg p-4">
                         <h4 className="text-lg font-semibold mb-3">Kontrakt B2B</h4>
-                        <div className="text-2xl font-bold" style={{ color: colors.accentOrange }}>
+                        <div className="text-2xl font-bold" style={{ color: currentTheme.colors.accentOrange }}>
                           {results.b2bMin.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} - {results.b2bMax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} PLN
                         </div>
                         <div className="text-sm opacity-80">netto miesięcznie</div>
@@ -327,7 +328,7 @@ const SalaryCalculator = () => {
                     
                     <div className="bg-white/10 rounded-lg p-4 mb-6">
                       <h4 className="text-lg font-semibold mb-2">Koszt procesu rekrutacji</h4>
-                      <div className="text-xl font-bold" style={{ color: colors.accentOrange }}>
+                      <div className="text-xl font-bold" style={{ color: currentTheme.colors.accentOrange }}>
                         {results.recruitmentCost.toLocaleString()} PLN
                       </div>
                       <div className="text-sm opacity-80">
@@ -341,8 +342,8 @@ const SalaryCalculator = () => {
                         variant="secondary"
                         className="transition-all duration-300 hover:shadow-lg"
                         style={{ 
-                          backgroundColor: colors.white,
-                          color: colors.primaryBlue,
+                          backgroundColor: currentTheme.colors.bgPrimary,
+                          color: currentTheme.colors.primaryBlue,
                           border: 'none'
                         }}
                       >

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
+import { themes } from '@/lib/themes';
 import { Button } from '@/components/ui/button';
 import { 
   DropdownMenu, 
@@ -17,7 +18,7 @@ const ThemeSwitcher: React.FC = () => {
       case 'blue':
         return '🔵';
       case 'green':
-        return '🟢';
+        return '💻';
       case 'purple':
         return '🟣';
       default:

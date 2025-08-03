@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { colors } from "@/lib/colors";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const HeroSection = () => {
+  const { currentTheme } = useTheme();
   const scrollToCalculator = () => {
     document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -10,8 +11,8 @@ const HeroSection = () => {
     <section 
       className="min-h-screen flex items-center py-16"
       style={{ 
-        background: `linear-gradient(135deg, ${colors.primaryBlue} 0%, ${colors.primaryBlueDark} 100%)`,
-        color: colors.textLight 
+        background: `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
+        color: currentTheme.colors.textLight 
       }}
     >
       <div className="container mx-auto px-4">
@@ -22,9 +23,9 @@ const HeroSection = () => {
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">
               Specjaliści IT
               <br />
-              <span style={{ color: colors.accentOrange }}>dla Twojej firmy</span>
+              <span style={{ color: currentTheme.colors.accentOrange }}>dla Twojej firmy</span>
             </h1>
-            <p className="text-xl mb-8 leading-relaxed" style={{ color: colors.textLight + 'CC' }}>
+            <p className="text-xl mb-8 leading-relaxed" style={{ color: currentTheme.colors.textLight + 'CC' }}>
               CodeTalent Agency to agencja rekrutacyjna specjalizująca się w pozyskiwaniu 
               najlepszych specjalistów IT. Oferujemy permanent placements dopasowane 
               do Twoich potrzeb biznesowych.
@@ -34,8 +35,8 @@ const HeroSection = () => {
                 size="lg" 
                 className="px-12 w-64 shadow-lg hover:shadow-xl transition-all duration-300"
                 style={{ 
-                  backgroundColor: colors.accentOrange,
-                  color: colors.textLight,
+                  backgroundColor: currentTheme.colors.accentOrange,
+                  color: currentTheme.colors.textLight,
                   border: 'none'
                 }}
                 onClick={scrollToCalculator}
@@ -47,8 +48,8 @@ const HeroSection = () => {
                 variant="outline"
                 className="px-12 w-64 shadow-lg hover:shadow-xl transition-all duration-300"
                 style={{ 
-                  borderColor: colors.accentOrange,
-                  color: colors.accentOrange,
+                  borderColor: currentTheme.colors.accentOrange,
+                  color: currentTheme.colors.accentOrange,
                   backgroundColor: 'transparent'
                 }}
               >
@@ -58,16 +59,16 @@ const HeroSection = () => {
             
             <div className="flex justify-center lg:justify-start gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold" style={{ color: colors.accentOrange }}>500+</div>
-                <div className="text-sm" style={{ color: colors.textLight + 'B3' }}>Rekrutacji</div>
+                <div className="text-3xl font-bold" style={{ color: currentTheme.colors.accentOrange }}>500+</div>
+                <div className="text-sm" style={{ color: currentTheme.colors.textLight + 'B3' }}>Rekrutacji</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold" style={{ color: colors.accentOrange }}>95%</div>
-                <div className="text-sm" style={{ color: colors.textLight + 'B3' }}>Skuteczność</div>
+                <div className="text-3xl font-bold" style={{ color: currentTheme.colors.accentOrange }}>95%</div>
+                <div className="text-sm" style={{ color: currentTheme.colors.textLight + 'B3' }}>Skuteczność</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold" style={{ color: colors.accentOrange }}>24h</div>
-                <div className="text-sm" style={{ color: colors.textLight + 'B3' }}>Pierwsza odpowiedź</div>
+                <div className="text-3xl font-bold" style={{ color: currentTheme.colors.accentOrange }}>24h</div>
+                <div className="text-sm" style={{ color: currentTheme.colors.textLight + 'B3' }}>Pierwsza odpowiedź</div>
               </div>
             </div>
           </div>
@@ -85,8 +86,8 @@ const HeroSection = () => {
                   alt="CodeTalent Hero" 
                   className="w-full h-auto max-w-2xl mx-auto rounded-2xl shadow-2xl animate-float"
                   style={{ 
-                    boxShadow: `0 25px 50px -12px ${colors.primaryBlue}40`,
-                    border: `4px solid ${colors.white}`
+                    boxShadow: `0 25px 50px -12px ${currentTheme.colors.primaryBlue}40`,
+                    border: `4px solid ${currentTheme.colors.bgPrimary}`
                   }}
                   loading="eager"
                   decoding="async"
