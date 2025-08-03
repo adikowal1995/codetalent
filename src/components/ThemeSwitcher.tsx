@@ -38,8 +38,11 @@ const ThemeSwitcher: React.FC = () => {
             color: currentTheme.colors.textSecondary 
           }}
         >
-          <Palette size={16} />
-          <span className="hidden sm:inline">Theme</span>
+          <div 
+            className="w-4 h-4 rounded-full border-2 border-white shadow-sm"
+            style={{ backgroundColor: currentTheme.colors.primaryBlue }}
+          />
+          <span className="hidden sm:inline">{currentTheme.name}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

@@ -102,7 +102,7 @@ const HeroSection = () => {
           <a 
             href="#calculator" 
             className="inline-flex items-center transition-colors cursor-pointer hover:scale-105" 
-            style={{ color: colors.textLight }}
+            style={{ color: currentTheme.colors.textLight }}
             aria-label="Scroll to calculator section"
             onClick={(e) => {
               e.preventDefault();

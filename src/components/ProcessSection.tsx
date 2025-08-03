@@ -93,7 +93,7 @@ const ProcessSection = () => {
         <div 
           className="mt-12 rounded-lg p-8 text-white text-center"
           style={{ 
-            background: `linear-gradient(135deg, ${colors.primaryBlue} 0%, ${colors.primaryBlueDark} 100%)`
+            background: `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`
           }}
         >
           <h3 className="text-4xl font-semibold mb-4">
