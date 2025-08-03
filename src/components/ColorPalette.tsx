@@ -114,8 +114,8 @@ const ColorPalette: React.FC = () => {
       <div className="mt-8 p-4 bg-gray-50 rounded-lg">
         <h3 className="text-lg font-semibold mb-2">Usage Examples:</h3>
         <div className="space-y-2 text-sm">
-          <p><code>import {`{ colors }`} from '../lib/colors';</code></p>
-          <p><code>style={{`{ backgroundColor: colors.primaryBlue }`}}</code></p>
+          <p><code>import {'{ colors }'} from '../lib/colors';</code></p>
+          <p><code>style={'{ backgroundColor: colors.primaryBlue }'}</code></p>
           <p><code>className="text-primary"</code> (using CSS variables)</p>
         </div>
       </div>
