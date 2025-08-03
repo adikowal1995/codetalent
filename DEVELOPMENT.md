@@ -174,6 +174,7 @@ The project includes pre-commit hooks that run automatically on every commit:
 - **Custom pre-commit script**: Runs full linting, tests, and build verification
 
 To manually run pre-commit checks:
+
 ```bash
 npm run lint && npm run test:run && npm run build
 ```
