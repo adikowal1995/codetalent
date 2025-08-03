@@ -1,20 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeTalent Agency - Rekrutacje IT | Kalkulator Procesu Rekrutacyjnego</title>
-    <meta name="description" content="CodeTalent Agency - specjalistyczna agencja rekrutacyjna IT. Sprawdź aktualny kalkulator procesu rekrutacyjnego dla programistów. Permanent placements dla firm." />
+    <title>
+      CodeTalent Agency - Rekrutacje IT | Kalkulator Procesu Rekrutacyjnego
+    </title>
+    <meta
+      name="description"
+      content="CodeTalent Agency - specjalistyczna agencja rekrutacyjna IT. Sprawdź aktualny kalkulator procesu rekrutacyjnego dla programistów. Permanent placements dla firm."
+    />
     <meta name="author" content="Lovable" />
 
-    <meta property="og:title" content="CodeTalent Agency - Rekrutacje IT | Kalkulator Procesu Rekrutacyjnego" />
-    <meta property="og:description" content="Sprawdź aktualne stawki dla specjalistów IT w Polsce. Permanent placements, transparentne widełki płacowe UoP i B2B." />
+    <meta
+      property="og:title"
+      content="CodeTalent Agency - Rekrutacje IT | Kalkulator Procesu Rekrutacyjnego"
+    />
+    <meta
+      property="og:description"
+      content="Sprawdź aktualne stawki dla specjalistów IT w Polsce. Permanent placements, transparentne widełki płacowe UoP i B2B."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta
+      property="og:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta
+      name="twitter:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
   </head>
 
   <body>
@@ -31,16 +48,22 @@
       // When the single page app is loaded further down in this file,
       // the correct url will be waiting in the browser's history for
       // the single page app to route accordingly.
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
           );
         }
-      }(window.location))
+      })(window.location);
     </script>
   </body>
 </html>

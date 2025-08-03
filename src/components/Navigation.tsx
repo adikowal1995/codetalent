@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { useTheme } from "@/contexts/ThemeContext";
-import ThemeSwitcher from "./ThemeSwitcher";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { useTheme } from '@/contexts/ThemeContext';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const Navigation = () => {
   const { currentTheme } = useTheme();
@@ -13,23 +13,23 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { label: "Kalkulator", id: "calculator" },
-    { label: "Proces", id: "process" },  
-    { label: "O nas", id: "about" },
-    { label: "Zespół", id: "team" }
+    { label: 'Kalkulator', id: 'calculator' },
+    { label: 'Proces', id: 'process' },
+    { label: 'O nas', id: 'about' },
+    { label: 'Zespół', id: 'team' },
   ];
 
   return (
-    <nav 
+    <nav
       className="fixed top-0 left-0 right-0 backdrop-blur-sm border-b z-50"
-      style={{ 
+      style={{
         backgroundColor: currentTheme.colors.bgPrimary + 'F2',
-        borderColor: currentTheme.colors.borderLight
+        borderColor: currentTheme.colors.borderLight,
       }}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <button 
+          <button
             onClick={() => scrollToSection('hero')}
             className="text-2xl font-bold transition-colors hover:opacity-80"
             style={{ color: currentTheme.colors.primaryBlue }}
@@ -39,7 +39,7 @@ const Navigation = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {navItems.map(item => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
@@ -50,13 +50,13 @@ const Navigation = () => {
               </button>
             ))}
             <ThemeSwitcher />
-            <Button 
+            <Button
               onClick={() => scrollToSection('calculator')}
               className="transition-all duration-300 hover:shadow-lg"
-              style={{ 
+              style={{
                 backgroundColor: currentTheme.colors.primaryBlue,
                 color: currentTheme.colors.textLight,
-                border: 'none'
+                border: 'none',
               }}
             >
               Sprawdź stawki
@@ -69,15 +69,15 @@ const Navigation = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <span 
+              <span
                 className={`block w-6 h-0.5 transition-all ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}
                 style={{ backgroundColor: currentTheme.colors.textPrimary }}
               ></span>
-              <span 
+              <span
                 className={`block w-6 h-0.5 mt-1 transition-all ${isMenuOpen ? 'opacity-0' : ''}`}
                 style={{ backgroundColor: currentTheme.colors.textPrimary }}
               ></span>
-              <span 
+              <span
                 className={`block w-6 h-0.5 mt-1 transition-all ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}
                 style={{ backgroundColor: currentTheme.colors.textPrimary }}
               ></span>
@@ -87,12 +87,12 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div 
+          <div
             className="md:hidden py-4 border-t"
             style={{ borderColor: currentTheme.colors.borderLight }}
           >
             <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
+              {navItems.map(item => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
@@ -105,13 +105,13 @@ const Navigation = () => {
               <div className="flex justify-center py-2">
                 <ThemeSwitcher />
               </div>
-              <Button 
+              <Button
                 onClick={() => scrollToSection('calculator')}
                 className="w-full transition-all duration-300 hover:shadow-lg"
-                style={{ 
+                style={{
                   backgroundColor: currentTheme.colors.primaryBlue,
                   color: currentTheme.colors.textLight,
-                  border: 'none'
+                  border: 'none',
                 }}
               >
                 Sprawdź stawki

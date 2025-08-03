@@ -29,7 +29,7 @@ export interface Theme {
 
 export const themes: Record<string, Theme> = {
   blue: {
-    name: "Blue Theme",
+    name: 'Blue Theme',
     colors: {
       primaryBlue: '#2563eb',
       primaryBlueDark: '#1d4ed8',
@@ -54,10 +54,10 @@ export const themes: Record<string, Theme> = {
       borderLight: '#e2e8f0',
       borderMedium: '#cbd5e1',
       borderDark: '#94a3b8',
-    }
+    },
   },
   green: {
-    name: "Theme 2",
+    name: 'Theme 2',
     colors: {
       primaryBlue: '#059669',
       primaryBlueDark: '#047857',
@@ -82,10 +82,10 @@ export const themes: Record<string, Theme> = {
       borderLight: '#bbf7d0',
       borderMedium: '#86efac',
       borderDark: '#4ade80',
-    }
+    },
   },
   purple: {
-    name: "Theme 3",
+    name: 'Theme 3',
     colors: {
       primaryBlue: '#22577a',
       primaryBlueDark: '#1a4561',
@@ -110,10 +110,10 @@ export const themes: Record<string, Theme> = {
       borderLight: '#c7f9cc',
       borderMedium: '#80ed99',
       borderDark: '#57cc99',
-    }
+    },
   },
   darkBlue: {
-    name: "Theme 4",
+    name: 'Theme 4',
     colors: {
       primaryBlue: '#0d1321',
       primaryBlueDark: '#0a0f1a',
@@ -138,10 +138,10 @@ export const themes: Record<string, Theme> = {
       borderLight: '#3e5c76',
       borderMedium: '#1d2d44',
       borderDark: '#0d1321',
-    }
+    },
   },
   ocean: {
-    name: "Theme 5",
+    name: 'Theme 5',
     colors: {
       primaryBlue: '#023047',
       primaryBlueDark: '#011a2e',
@@ -166,10 +166,10 @@ export const themes: Record<string, Theme> = {
       borderLight: '#8ecae6',
       borderMedium: '#219ebc',
       borderDark: '#023047',
-    }
+    },
   },
   purpleGray: {
-    name: "Theme 6",
+    name: 'Theme 6',
     colors: {
       primaryBlue: '#22223b',
       primaryBlueDark: '#1a1a2e',
@@ -194,8 +194,8 @@ export const themes: Record<string, Theme> = {
       borderLight: '#c9ada7',
       borderMedium: '#9a8c98',
       borderDark: '#4a4e69',
-    }
-  }
+    },
+  },
 };
 
-export type ThemeKey = keyof typeof themes; 
+export type ThemeKey = keyof typeof themes;

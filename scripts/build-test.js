@@ -37,7 +37,9 @@ if (fs.existsSync(distPath)) {
   console.log(`📁 Dist folder contains ${files.length} files:`);
   files.forEach(file => {
     const stats = fs.statSync(path.join(distPath, file));
-    console.log(`   - ${file} (${stats.isDirectory() ? 'dir' : stats.size + ' bytes'})`);
+    console.log(
+      `   - ${file} (${stats.isDirectory() ? 'dir' : stats.size + ' bytes'})`
+    );
   });
 } else {
   console.error('❌ Dist folder not found!');
@@ -45,4 +47,4 @@ if (fs.existsSync(distPath)) {
 }
 
 console.log('\n🎉 All builds completed successfully!');
-console.log('🚀 Ready for deployment to GitHub Pages.'); 
+console.log('🚀 Ready for deployment to GitHub Pages.');

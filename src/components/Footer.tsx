@@ -1,26 +1,36 @@
-import { useTheme } from "@/contexts/ThemeContext";
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Footer = () => {
   const { currentTheme } = useTheme();
   return (
-          <footer 
-        className="py-12"
-        style={{ 
-          backgroundColor: currentTheme.colors.primaryBlue,
-          color: currentTheme.colors.textLight
-        }}
-      >
+    <footer
+      className="py-12"
+      style={{
+        backgroundColor: currentTheme.colors.primaryBlue,
+        color: currentTheme.colors.textLight,
+      }}
+    >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-2">
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 lg:mb-4" style={{ color: currentTheme.colors.accentOrange }}>
+            <h3
+              className="text-xl sm:text-2xl font-bold mb-3 lg:mb-4"
+              style={{ color: currentTheme.colors.accentOrange }}
+            >
               CodeTalent Agency
             </h3>
-            <p className="mb-3 lg:mb-4 leading-relaxed text-sm sm:text-base" style={{ color: currentTheme.colors.textLight + 'CC' }}>
-              Specjalizujemy się w rekrutacjach stałych najlepszych specjalistów IT. 
-              Tworzymy długoterminowe partnerstwa oparte na zaufaniu i jakości.
+            <p
+              className="mb-3 lg:mb-4 leading-relaxed text-sm sm:text-base"
+              style={{ color: currentTheme.colors.textLight + 'CC' }}
+            >
+              Specjalizujemy się w rekrutacjach stałych najlepszych specjalistów
+              IT. Tworzymy długoterminowe partnerstwa oparte na zaufaniu i
+              jakości.
             </p>
-            <div className="space-y-2 lg:space-y-3 mb-3 lg:mb-4" style={{ color: currentTheme.colors.textLight + 'CC' }}>
+            <div
+              className="space-y-2 lg:space-y-3 mb-3 lg:mb-4"
+              style={{ color: currentTheme.colors.textLight + 'CC' }}
+            >
               <div className="flex items-center gap-3 text-sm sm:text-base">
                 <span>+48 798 592 333</span>
               </div>
@@ -31,10 +41,16 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 lg:mb-4" style={{ color: currentTheme.colors.textLight }}>
+            <h4
+              className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
+              style={{ color: currentTheme.colors.textLight }}
+            >
               Nasze usługi
             </h4>
-            <div className="space-y-2 lg:space-y-3" style={{ color: currentTheme.colors.textLight + 'CC' }}>
+            <div
+              className="space-y-2 lg:space-y-3"
+              style={{ color: currentTheme.colors.textLight + 'CC' }}
+            >
               <div className="flex items-center gap-3 text-sm sm:text-base">
                 <span>Rekrutacje</span>
               </div>
@@ -51,10 +67,16 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 lg:mb-4" style={{ color: currentTheme.colors.textLight }}>
+            <h4
+              className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
+              style={{ color: currentTheme.colors.textLight }}
+            >
               Branże
             </h4>
-            <div className="space-y-2 lg:space-y-3" style={{ color: currentTheme.colors.textLight + 'CC' }}>
+            <div
+              className="space-y-2 lg:space-y-3"
+              style={{ color: currentTheme.colors.textLight + 'CC' }}
+            >
               <div className="flex items-center gap-3 text-sm sm:text-base">
                 <span>Software House</span>
               </div>
@@ -74,10 +96,16 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 lg:mb-4" style={{ color: currentTheme.colors.textLight }}>
+            <h4
+              className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
+              style={{ color: currentTheme.colors.textLight }}
+            >
               Specjalności
             </h4>
-            <div className="space-y-2 lg:space-y-3" style={{ color: currentTheme.colors.textLight + 'CC' }}>
+            <div
+              className="space-y-2 lg:space-y-3"
+              style={{ color: currentTheme.colors.textLight + 'CC' }}
+            >
               <div className="flex items-center gap-3 text-sm sm:text-base">
                 <span>Cybersecurity</span>
               </div>
@@ -97,12 +125,15 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-base sm:text-lg font-semibold mb-3 lg:mb-4" style={{ color: currentTheme.colors.textLight }}>
+            <h4
+              className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
+              style={{ color: currentTheme.colors.textLight }}
+            >
               Social Media
             </h4>
             <div className="space-y-2 lg:space-y-3">
-              <a 
-                href="https://linkedin.com/company/codetalent" 
+              <a
+                href="https://linkedin.com/company/codetalent"
                 className="flex items-center gap-3 transition-colors hover:opacity-80 text-sm sm:text-base"
                 style={{ color: currentTheme.colors.textLight + 'CC' }}
                 target="_blank"
@@ -114,11 +145,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div 
+        <div
           className="border-t mt-6 lg:mt-8 pt-4 lg:pt-6 text-center text-xs sm:text-sm"
-          style={{ 
+          style={{
             borderColor: currentTheme.colors.textLight + '33',
-            color: currentTheme.colors.textLight + '99'
+            color: currentTheme.colors.textLight + '99',
           }}
         >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 lg:gap-4">
@@ -126,13 +157,25 @@ const Footer = () => {
               © 2024 CodeTalent Agency. Wszystkie prawa zastrzeżone.
             </div>
             <div className="flex flex-wrap justify-center sm:justify-end gap-3 lg:gap-6">
-              <a href="/polityka-prywatnosci.html" className="hover:underline transition-colors text-xs sm:text-sm" style={{ color: currentTheme.colors.accentOrange }}>
+              <a
+                href="/polityka-prywatnosci.html"
+                className="hover:underline transition-colors text-xs sm:text-sm"
+                style={{ color: currentTheme.colors.accentOrange }}
+              >
                 Polityka Prywatności
               </a>
-              <a href="/regulamin.html" className="hover:underline transition-colors text-xs sm:text-sm" style={{ color: currentTheme.colors.accentOrange }}>
+              <a
+                href="/regulamin.html"
+                className="hover:underline transition-colors text-xs sm:text-sm"
+                style={{ color: currentTheme.colors.accentOrange }}
+              >
                 Regulamin
               </a>
-              <a href="#" className="hover:underline transition-colors text-xs sm:text-sm" style={{ color: currentTheme.colors.accentOrange }}>
+              <a
+                href="#"
+                className="hover:underline transition-colors text-xs sm:text-sm"
+                style={{ color: currentTheme.colors.accentOrange }}
+              >
                 Ustawienia Cookies
               </a>
             </div>

@@ -1,10 +1,10 @@
-import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
-import SalaryCalculator from "@/components/SalaryCalculator";
-import ProcessSection from "@/components/ProcessSection";
-import AboutSection from "@/components/AboutSection";
-import TeamSection from "@/components/TeamSection";
-import Footer from "@/components/Footer";
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import SalaryCalculator from '@/components/SalaryCalculator';
+import ProcessSection from '@/components/ProcessSection';
+import AboutSection from '@/components/AboutSection';
+import TeamSection from '@/components/TeamSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (

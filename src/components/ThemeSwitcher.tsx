@@ -2,16 +2,17 @@ import React from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
 import { themes } from '@/lib/themes';
 import { Button } from '@/components/ui/button';
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuTrigger 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Palette } from 'lucide-react';
 
 const ThemeSwitcher: React.FC = () => {
-  const { currentTheme, currentThemeKey, setTheme, availableThemes } = useTheme();
+  const { currentTheme, currentThemeKey, setTheme, availableThemes } =
+    useTheme();
 
   const getThemeIcon = (themeKey: string) => {
     switch (themeKey) {
@@ -29,16 +30,16 @@ const ThemeSwitcher: React.FC = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button 
-          variant="outline" 
+        <Button
+          variant="outline"
           size="sm"
           className="flex items-center gap-2"
-          style={{ 
+          style={{
             borderColor: currentTheme.colors.borderLight,
-            color: currentTheme.colors.textSecondary 
+            color: currentTheme.colors.textSecondary,
           }}
         >
-          <div 
+          <div
             className="w-4 h-4 rounded-full border-2 border-white shadow-sm"
             style={{ backgroundColor: currentTheme.colors.primaryBlue }}
           />
@@ -46,7 +47,7 @@ const ThemeSwitcher: React.FC = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {availableThemes.map((themeKey) => (
+        {availableThemes.map(themeKey => (
           <DropdownMenuItem
             key={themeKey}
             onClick={() => setTheme(themeKey)}
@@ -63,4 +64,4 @@ const ThemeSwitcher: React.FC = () => {
   );
 };
 
-export default ThemeSwitcher; 
+export default ThemeSwitcher;

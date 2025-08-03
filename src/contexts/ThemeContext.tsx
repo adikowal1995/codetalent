@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from 'react';
 import { themes, Theme, ThemeKey } from '@/lib/themes';
 
 interface ThemeContextType {
@@ -37,9 +43,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   };
 
   return (
-    <ThemeContext.Provider value={value}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 };
 
@@ -49,4 +53,4 @@ export const useTheme = (): ThemeContextType => {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
   return context;
-}; 
+};

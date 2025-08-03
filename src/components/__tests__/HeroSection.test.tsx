@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
-import HeroSection from '../HeroSection'
-import { ThemeProvider } from '@/contexts/ThemeContext'
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import HeroSection from '../HeroSection';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 
 // Mock the theme context
 const mockTheme = {
@@ -30,51 +30,53 @@ const mockTheme = {
     borderLight: '#e5e7eb',
     borderMedium: '#d1d5db',
     borderDark: '#9ca3af',
-  }
-}
+  },
+};
 
 const renderWithTheme = (component: React.ReactElement) => {
-  return render(
-    <ThemeProvider>
-      {component}
-    </ThemeProvider>
-  )
-}
+  return render(<ThemeProvider>{component}</ThemeProvider>);
+};
 
 describe('HeroSection', () => {
   it('renders the main heading', () => {
-    renderWithTheme(<HeroSection />)
-    expect(screen.getByText(/Specjaliści IT/i)).toBeInTheDocument()
-  })
+    renderWithTheme(<HeroSection />);
+    expect(screen.getByText(/Specjaliści IT/i)).toBeInTheDocument();
+  });
 
   it('renders the subtitle', () => {
-    renderWithTheme(<HeroSection />)
-    expect(screen.getByText(/dla Twojej firmy/i)).toBeInTheDocument()
-  })
+    renderWithTheme(<HeroSection />);
+    expect(screen.getByText(/dla Twojej firmy/i)).toBeInTheDocument();
+  });
 
   it('renders the description text', () => {
-    renderWithTheme(<HeroSection />)
-    expect(screen.getByText(/CodeTalent Agency to agencja rekrutacyjna/i)).toBeInTheDocument()
-  })
+    renderWithTheme(<HeroSection />);
+    expect(
+      screen.getByText(/CodeTalent Agency to agencja rekrutacyjna/i)
+    ).toBeInTheDocument();
+  });
 
   it('renders the primary call-to-action button', () => {
-    renderWithTheme(<HeroSection />)
-    expect(screen.getByText(/Sprawdź koszt procesu rekrutacji/i)).toBeInTheDocument()
-  })
+    renderWithTheme(<HeroSection />);
+    expect(
+      screen.getByText(/Sprawdź koszt procesu rekrutacji/i)
+    ).toBeInTheDocument();
+  });
 
   it('renders the secondary call-to-action button', () => {
-    renderWithTheme(<HeroSection />)
-    expect(screen.getByText(/Umów się na spotkanie/i)).toBeInTheDocument()
-  })
+    renderWithTheme(<HeroSection />);
+    expect(screen.getByText(/Umów się na spotkanie/i)).toBeInTheDocument();
+  });
 
   it('renders the scroll link', () => {
-    renderWithTheme(<HeroSection />)
-    expect(screen.getByText(/Co możemy dla Ciebie zrobić/i)).toBeInTheDocument()
-  })
+    renderWithTheme(<HeroSection />);
+    expect(
+      screen.getByText(/Co możemy dla Ciebie zrobić/i)
+    ).toBeInTheDocument();
+  });
 
   it('renders the hero image', () => {
-    renderWithTheme(<HeroSection />)
-    const image = screen.getByAltText('CodeTalent Hero')
-    expect(image).toBeInTheDocument()
-  })
-}) 
+    renderWithTheme(<HeroSection />);
+    const image = screen.getByAltText('CodeTalent Hero');
+    expect(image).toBeInTheDocument();
+  });
+});
