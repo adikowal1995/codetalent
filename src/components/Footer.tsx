@@ -126,10 +126,10 @@ const Footer = () => {
               © 2024 CodeTalent Agency. Wszystkie prawa zastrzeżone.
             </div>
             <div className="flex gap-6">
-              <a href="#" className="hover:underline transition-colors" style={{ color: currentTheme.colors.accentOrange }}>
+              <a href="/polityka-prywatnosci.html" className="hover:underline transition-colors" style={{ color: currentTheme.colors.accentOrange }}>
                 Polityka Prywatności
               </a>
-              <a href="#" className="hover:underline transition-colors" style={{ color: currentTheme.colors.accentOrange }}>
+              <a href="/regulamin.html" className="hover:underline transition-colors" style={{ color: currentTheme.colors.accentOrange }}>
                 Regulamin
               </a>
               <a href="#" className="hover:underline transition-colors" style={{ color: currentTheme.colors.accentOrange }}>
