@@ -959,7 +959,16 @@ const SalaryCalculator = () => {
 
   if (showForm && results) {
     return (
-      <ContactForm calculatorData={results} onBack={() => setShowForm(false)} />
+      <section
+        id="calculator"
+        className="py-16"
+        style={{ backgroundColor: '#f9fafb' }}
+      >
+        <ContactForm
+          calculatorData={results}
+          onBack={() => setShowForm(false)}
+        />
+      </section>
     );
   }
 
@@ -967,26 +976,9 @@ const SalaryCalculator = () => {
     <section
       id="calculator"
       className="py-16"
-      style={{ backgroundColor: currentTheme.colors.bgSecondary }}
+      style={{ backgroundColor: '#f9fafb' }}
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2
-            className="text-4xl font-bold mb-4"
-            style={{ color: currentTheme.colors.textPrimary }}
-          >
-            Kalkulator procesu rekrutacyjnego
-          </h2>
-          <p
-            className="text-xl max-w-2xl mx-auto"
-            style={{ color: currentTheme.colors.textSecondary }}
-          >
-            Sprawdź aktualne stawki dla specjalistów IT w Polsce oraz koszt
-            rekrutacji. Dane oparte na naszym doświadczeniu i obecnych trendach
-            rynkowych.
-          </p>
-        </div>
-
         <div className="max-w-4xl mx-auto">
           <Card
             className="shadow-lg"
@@ -997,17 +989,27 @@ const SalaryCalculator = () => {
           >
             <CardHeader>
               <CardTitle
-                className="text-2xl text-center"
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center"
                 style={{ color: currentTheme.colors.textPrimary }}
               >
-                Wybierz parametry stanowiska i oblicz koszt rekrutacji
+                Kalkulator procesu rekrutacyjnego
               </CardTitle>
+              <p
+                className="text-center text-base sm:text-lg lg:text-xl mt-2"
+                style={{ color: currentTheme.colors.textSecondary }}
+              >
+                Sprawdź aktualne stawki dla specjalistów IT w Polsce oraz koszt
+                rekrutacji.
+                <br />
+                Dane oparte na naszym doświadczeniu i obecnych trendach
+                rynkowych.
+              </p>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid md:grid-cols-3 gap-6">
                 <div>
                   <label
-                    className="block text-sm font-medium mb-2"
+                    className="block text-base font-medium mb-2"
                     style={{ color: currentTheme.colors.textPrimary }}
                   >
                     Rola
@@ -1093,7 +1095,7 @@ const SalaryCalculator = () => {
 
                 <div>
                   <label
-                    className="block text-sm font-medium mb-2"
+                    className="block text-base font-medium mb-2"
                     style={{ color: currentTheme.colors.textPrimary }}
                   >
                     Doświadczenie
@@ -1112,7 +1114,7 @@ const SalaryCalculator = () => {
 
                 <div>
                   <label
-                    className="block text-sm font-medium mb-2"
+                    className="block text-base font-medium mb-2"
                     style={{ color: currentTheme.colors.textPrimary }}
                   >
                     Tryb pracy
@@ -1192,29 +1194,29 @@ const SalaryCalculator = () => {
                     </div>
 
                     <div className="bg-white/10 rounded-lg p-4 mb-6">
-                      <h4 className="text-lg font-semibold mb-2">
+                      <h4 className="text-lg font-semibold mb-3">
                         Koszt procesu rekrutacji
                       </h4>
                       <div
-                        className="text-xl font-bold"
+                        className="text-2xl font-bold"
                         style={{ color: currentTheme.colors.accentOrange }}
                       >
                         {results.recruitmentCost.toLocaleString()} PLN
                       </div>
                       <div className="text-sm opacity-80">
                         Obejmuje całość procesu: sourcing, weryfikację, wywiad,
-                        referencje
+                        referencje, gwarancję
                       </div>
                     </div>
 
                     <div className="text-center">
                       <Button
                         onClick={handleSendInquiry}
-                        variant="secondary"
-                        className="transition-all duration-300 hover:shadow-lg"
+                        size="lg"
+                        className="shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base hover:scale-105"
                         style={{
-                          backgroundColor: currentTheme.colors.bgPrimary,
-                          color: currentTheme.colors.primaryBlue,
+                          backgroundColor: currentTheme.colors.accentOrange,
+                          color: '#22577a',
                           border: 'none',
                         }}
                       >

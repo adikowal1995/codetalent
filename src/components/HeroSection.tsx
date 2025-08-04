@@ -22,7 +22,11 @@ const HeroSection = () => {
                 ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.secondaryGray} 30%, ${currentTheme.colors.secondaryGrayLight} 70%, ${currentTheme.colors.accentGreen} 100%)`
                 : currentTheme.name === 'Theme 6'
                   ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.secondaryGray} 30%, ${currentTheme.colors.secondaryGrayLight} 70%, ${currentTheme.colors.accentOrange} 100%)`
-                  : `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
+                  : currentTheme.name === 'Theme 7'
+                    ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.secondaryGray} 30%, ${currentTheme.colors.accentGreen} 70%, ${currentTheme.colors.accentOrange} 100%)`
+                    : currentTheme.name === 'Theme Master'
+                      ? `linear-gradient(135deg, #1e3a8a 0%, ${currentTheme.colors.primaryBlue} 30%, ${currentTheme.colors.secondaryGray} 70%, ${currentTheme.colors.accentGreen} 100%)`
+                      : `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
         color: currentTheme.colors.textLight,
       }}
     >
@@ -49,10 +53,10 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start mb-6 lg:mb-8 gap-3 sm:gap-4 px-4 lg:px-0">
               <Button
                 size="lg"
-                className="w-full sm:w-auto px-6 sm:px-8 lg:px-12 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
+                className="w-full sm:w-auto px-6 sm:px-8 lg:px-12 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base hover:scale-105"
                 style={{
                   backgroundColor: currentTheme.colors.accentOrange,
-                  color: currentTheme.colors.textLight,
+                  color: '#22577a',
                   border: 'none',
                 }}
                 onClick={scrollToCalculator}
@@ -62,7 +66,7 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto px-6 sm:px-8 lg:px-12 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base"
+                className="w-full sm:w-auto px-6 sm:px-8 lg:px-12 shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base hover:scale-105"
                 style={{
                   borderColor: currentTheme.colors.accentOrange,
                   color: currentTheme.colors.accentOrange,
@@ -120,7 +124,9 @@ const HeroSection = () => {
                 ?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            <span className="mr-2">Co możemy dla Ciebie zrobić</span>
+            <span className="mr-2 text-base sm:text-lg lg:text-xl">
+              Co możemy dla Ciebie zrobić
+            </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

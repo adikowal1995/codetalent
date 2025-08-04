@@ -22,6 +22,16 @@ const ThemeSwitcher: React.FC = () => {
         return '💻';
       case 'purple':
         return '🟣';
+      case 'darkBlue':
+        return '🌙';
+      case 'ocean':
+        return '🌊';
+      case 'purpleGray':
+        return '🎭';
+      case 'oceanTeal':
+        return '🐠';
+      case 'master':
+        return '👑';
       default:
         return '🎨';
     }

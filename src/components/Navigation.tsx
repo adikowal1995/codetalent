@@ -54,8 +54,8 @@ const Navigation = () => {
               onClick={() => scrollToSection('calculator')}
               className="transition-all duration-300 hover:shadow-lg"
               style={{
-                backgroundColor: currentTheme.colors.primaryBlue,
-                color: currentTheme.colors.textLight,
+                backgroundColor: currentTheme.colors.accentOrange,
+                color: '#22577a',
                 border: 'none',
               }}
             >
@@ -109,8 +109,8 @@ const Navigation = () => {
                 onClick={() => scrollToSection('calculator')}
                 className="w-full transition-all duration-300 hover:shadow-lg"
                 style={{
-                  backgroundColor: currentTheme.colors.primaryBlue,
-                  color: currentTheme.colors.textLight,
+                  backgroundColor: currentTheme.colors.accentOrange,
+                  color: '#22577a',
                   border: 'none',
                 }}
               >

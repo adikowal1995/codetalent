@@ -43,10 +43,7 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section
-      className="py-16"
-      style={{ backgroundColor: currentTheme.colors.bgTertiary }}
-    >
+    <section className="py-16 relative" style={{ backgroundColor: '#f9fafb' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 lg:mb-12">
           <h2
@@ -106,15 +103,15 @@ const ProcessSection = () => {
         </div>
 
         <div
-          className="mt-8 lg:mt-12 rounded-lg p-6 lg:p-8 text-white text-center"
+          className="mt-8 lg:mt-12 rounded-lg p-6 lg:p-8 text-white text-center transition-all duration-500 hover:scale-105 hover:shadow-2xl animate-fade-in"
           style={{
             background: `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
           }}
         >
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 lg:mb-4">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 lg:mb-4 transition-all duration-300 hover:scale-105">
             Gwarancja jakości
           </h3>
-          <p className="text-base sm:text-lg lg:text-xl opacity-90 max-w-2xl mx-auto px-4">
+          <p className="text-base sm:text-lg lg:text-xl opacity-90 max-w-2xl mx-auto px-4 transition-all duration-300">
             Oferujemy 3-miesięczną gwarancję na każdą rekrutację.
             <br />
             Jeśli kandydat nie spełni oczekiwań, przeprowadzimy proces ponownie.

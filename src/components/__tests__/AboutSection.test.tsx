@@ -25,7 +25,7 @@ describe('AboutSection', () => {
     expect(screen.getByText('500+')).toBeInTheDocument();
     expect(screen.getByText('10 dni')).toBeInTheDocument();
     expect(screen.getByText('24h')).toBeInTheDocument();
-    expect(screen.getByText('12+ lat')).toBeInTheDocument();
+    expect(screen.getByText('>12 lat')).toBeInTheDocument();
   });
 
   it('renders statistics labels', () => {

@@ -1,9 +1,9 @@
+/* Import our custom color system */
+@import './styles/colors.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Import our custom color system */
-@import './styles/colors.css';
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
@@ -142,4 +142,48 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Prevent layout shift by always showing scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Ensure consistent scrollbar width across browsers */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* Webkit scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+  background-clip: content-box;
+}
+
+/* Prevent layout shifts */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure consistent viewport */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
 }

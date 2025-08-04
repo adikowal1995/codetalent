@@ -6,7 +6,8 @@ const Footer = () => {
     <footer
       className="py-12"
       style={{
-        backgroundColor: currentTheme.colors.primaryBlue,
+        background:
+          'linear-gradient(135deg, rgb(34, 87, 122) 0%, rgb(26, 69, 97) 100%)',
         color: currentTheme.colors.textLight,
       }}
     >
