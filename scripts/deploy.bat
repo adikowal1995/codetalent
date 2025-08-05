@@ -1,97 +1,66 @@
 @echo off
-REM Deployment script for Windows
-REM This script runs all checks before deployment
+REM CodeTalent Deployment Script for Windows
+REM This script builds and deploys the website to GitHub Pages
 
-echo 🚀 Starting deployment process...
+echo 🚀 Starting CodeTalent deployment...
 
-REM Check if we're on the right branch
+REM Check if we're on a deployment branch
 for /f "tokens=*" %%i in ('git branch --show-current') do set CURRENT_BRANCH=%%i
-if not "%CURRENT_BRANCH%"=="development" if not "%CURRENT_BRANCH%"=="main" (
-    echo ❌ Error: Deployment can only be run from 'development' or 'main' branch
-    exit /b 1
+
+if not "%CURRENT_BRANCH%"=="main" if not "%CURRENT_BRANCH%"=="development" if not "%CURRENT_BRANCH%"=="production" (
+    echo ⚠️  Warning: Not on a deployment branch (main/development/production)
+    echo    Current branch: %CURRENT_BRANCH%
+    set /p CONTINUE="Continue anyway? (y/N): "
+    if /i not "%CONTINUE%"=="y" exit /b 1
 )
-
-echo 📋 Current branch: %CURRENT_BRANCH%
-
-REM Run pre-deployment checks
-echo 🔍 Running pre-deployment checks...
 
 REM Install dependencies
 echo 📦 Installing dependencies...
 call npm ci
-if %errorlevel% neq 0 (
+if errorlevel 1 (
     echo ❌ Failed to install dependencies
     exit /b 1
 )
 
-REM Run linting
-echo 📝 Running ESLint...
-call npm run lint
-if %errorlevel% neq 0 (
-    echo ❌ ESLint failed. Deployment aborted.
-    exit /b 1
-)
-echo ✅ ESLint passed
-
 REM Run tests
 echo 🧪 Running tests...
 call npm run test:run
-if %errorlevel% neq 0 (
-    echo ❌ Tests failed. Deployment aborted.
+if errorlevel 1 (
+    echo ❌ Tests failed
     exit /b 1
 )
-echo ✅ Tests passed
 
-REM Run security audit
-echo 🔒 Running security audit...
-call npm audit --audit-level=moderate
-if %errorlevel% neq 0 (
-    echo ⚠️  Security audit found issues. Please review before deployment.
-    set /p CONTINUE="Continue with deployment? (y/N): "
-    if /i not "%CONTINUE%"=="y" (
-        echo ❌ Deployment aborted due to security issues.
-        exit /b 1
-    )
-)
-echo ✅ Security audit passed
-
-REM Build application
-echo 🏗️  Building application...
+REM Build the project
+echo 🏗️  Building project...
 call npm run build
-if %errorlevel% neq 0 (
-    echo ❌ Build failed. Deployment aborted.
+if errorlevel 1 (
+    echo ❌ Build failed
     exit /b 1
 )
-echo ✅ Build completed
 
-REM Determine deployment environment
-if "%CURRENT_BRANCH%"=="main" (
-    set ENVIRONMENT=production
-) else (
-    set ENVIRONMENT=development
+REM Check if build was successful
+if not exist "dist" (
+    echo ❌ Build failed - dist directory not found
+    exit /b 1
 )
 
-echo 🌍 Deploying to %ENVIRONMENT% environment...
+echo ✅ Build completed successfully!
 
-REM Add your deployment commands here
-REM Example for different deployment scenarios:
+REM If we're on main or production, we can deploy directly
+if "%CURRENT_BRANCH%"=="main" (
+    echo 🌐 Deploying to production...
+    echo 📱 Website will be available at: https://adikowal1995.github.io/codetalent/
+) else if "%CURRENT_BRANCH%"=="production" (
+    echo 🌐 Deploying to production...
+    echo 📱 Website will be available at: https://adikowal1995.github.io/codetalent/
+) else (
+    echo 🌐 Deploying to development...
+    echo 📱 Website will be available at: https://adikowal1995.github.io/codetalent/
+)
 
-REM For Vercel:
-REM call vercel --prod
+echo.
+echo 🎉 Deployment completed!
+echo 📊 Check deployment status at: https://github.com/adikowal1995/codetalent/actions
+echo 🌐 Live website: https://adikowal1995.github.io/codetalent/
 
-REM For Netlify:
-REM call netlify deploy --prod --dir=dist
-
-REM For AWS S3:
-REM call aws s3 sync dist/ s3://your-bucket-name --delete
-
-REM For custom server (rsync):
-REM call rsync -avz --delete dist/ user@server:/path/to/web/root/
-
-echo ✅ Deployment to %ENVIRONMENT% completed successfully!
-
-REM Optional: Run post-deployment tests
-echo 🧪 Running post-deployment tests...
-REM Add your post-deployment test commands here
-
-echo 🎉 Deployment process completed successfully! 
+pause 

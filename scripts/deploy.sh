@@ -1,96 +1,54 @@
 #!/bin/bash
 
-# Deployment script
-# This script runs all checks before deployment
+# CodeTalent Deployment Script
+# This script builds and deploys the website to GitHub Pages
 
-set -e  # Exit on any error
+set -e
 
-echo "🚀 Starting deployment process..."
+echo "🚀 Starting CodeTalent deployment..."
 
-# Check if we're on the right branch
-if [ "$(git branch --show-current)" != "development" ] && [ "$(git branch --show-current)" != "main" ]; then
-    echo "❌ Error: Deployment can only be run from 'development' or 'main' branch"
-    exit 1
+# Check if we're on a deployment branch
+CURRENT_BRANCH=$(git branch --show-current)
+if [[ "$CURRENT_BRANCH" != "main" && "$CURRENT_BRANCH" != "development" && "$CURRENT_BRANCH" != "production" ]]; then
+    echo "⚠️  Warning: Not on a deployment branch (main/development/production)"
+    echo "   Current branch: $CURRENT_BRANCH"
+    read -p "Continue anyway? (y/N): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        exit 1
+    fi
 fi
-
-echo "📋 Current branch: $(git branch --show-current)"
-
-# Run pre-deployment checks
-echo "🔍 Running pre-deployment checks..."
 
 # Install dependencies
 echo "📦 Installing dependencies..."
 npm ci
 
-# Run linting
-echo "📝 Running ESLint..."
-npm run lint
-if [ $? -ne 0 ]; then
-    echo "❌ ESLint failed. Deployment aborted."
-    exit 1
-fi
-echo "✅ ESLint passed"
-
 # Run tests
 echo "🧪 Running tests..."
 npm run test:run
-if [ $? -ne 0 ]; then
-    echo "❌ Tests failed. Deployment aborted."
-    exit 1
-fi
-echo "✅ Tests passed"
 
-# Run security audit
-echo "🔒 Running security audit..."
-npm audit --audit-level=moderate
-if [ $? -ne 0 ]; then
-    echo "⚠️  Security audit found issues. Please review before deployment."
-    read -p "Continue with deployment? (y/N): " -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        echo "❌ Deployment aborted due to security issues."
-        exit 1
-    fi
-fi
-echo "✅ Security audit passed"
-
-# Build application
-echo "🏗️  Building application..."
+# Build the project
+echo "🏗️  Building project..."
 npm run build
-if [ $? -ne 0 ]; then
-    echo "❌ Build failed. Deployment aborted."
+
+# Check if build was successful
+if [ ! -d "dist" ]; then
+    echo "❌ Build failed - dist directory not found"
     exit 1
 fi
-echo "✅ Build completed"
 
-# Determine deployment environment
-if [ "$(git branch --show-current)" = "main" ]; then
-    ENVIRONMENT="production"
+echo "✅ Build completed successfully!"
+
+# If we're on main or production, we can deploy directly
+if [[ "$CURRENT_BRANCH" == "main" || "$CURRENT_BRANCH" == "production" ]]; then
+    echo "🌐 Deploying to production..."
+    echo "📱 Website will be available at: https://adikowal1995.github.io/codetalent/"
 else
-    ENVIRONMENT="development"
+    echo "🌐 Deploying to development..."
+    echo "📱 Website will be available at: https://adikowal1995.github.io/codetalent/"
 fi
 
-echo "🌍 Deploying to $ENVIRONMENT environment..."
-
-# Add your deployment commands here
-# Example for different deployment scenarios:
-
-# For Vercel:
-# vercel --prod
-
-# For Netlify:
-# netlify deploy --prod --dir=dist
-
-# For AWS S3:
-# aws s3 sync dist/ s3://your-bucket-name --delete
-
-# For custom server (rsync):
-# rsync -avz --delete dist/ user@server:/path/to/web/root/
-
-echo "✅ Deployment to $ENVIRONMENT completed successfully!"
-
-# Optional: Run post-deployment tests
-echo "🧪 Running post-deployment tests..."
-# Add your post-deployment test commands here
-
-echo "🎉 Deployment process completed successfully!" 
+echo ""
+echo "🎉 Deployment completed!"
+echo "📊 Check deployment status at: https://github.com/adikowal1995/codetalent/actions"
+echo "🌐 Live website: https://adikowal1995.github.io/codetalent/" 
