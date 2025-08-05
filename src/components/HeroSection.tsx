@@ -18,10 +18,11 @@ const HeroSection = () => {
             ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueLight} 30%, ${currentTheme.colors.secondaryGray} 70%, ${currentTheme.colors.accentGreen} 100%)`
             : currentTheme.name === 'Theme 6'
               ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.secondaryGray} 30%, ${currentTheme.colors.secondaryGrayLight} 70%, ${currentTheme.colors.accentOrange} 100%)`
-              : currentTheme.name === 'Theme Master' ||
-                  currentTheme.name === 'Theme Master 1.1'
+              : currentTheme.name === 'Theme Master'
                 ? `linear-gradient(135deg, #1e3a8a 0%, ${currentTheme.colors.primaryBlue} 30%, ${currentTheme.colors.secondaryGray} 70%, ${currentTheme.colors.accentGreen} 100%)`
-                : `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
+                : currentTheme.name === 'Theme Master 1.1'
+                  ? `linear-gradient(to bottom, #2D3142 0%, #4f5D75 25%, #9A8C98 50%, #3C6E71 100%)`
+                  : `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
         color: currentTheme.colors.textLight,
       }}
     >
