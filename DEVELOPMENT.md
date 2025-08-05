@@ -1,6 +1,6 @@
 # Development Workflow
 
-This document outlines the development workflow for the CodeTalent Agency website, including linting, testing, and deployment processes.
+This document outlines the development workflow for the CodeTalent website, including linting, testing, and deployment processes.
 
 ## 🚀 Quick Start
 

@@ -1,7 +1,9 @@
 import { useTheme } from '@/contexts/ThemeContext';
+import { useCookie } from '@/contexts/CookieContext';
 
 const Footer = () => {
   const { currentTheme } = useTheme();
+  const { setShowBanner } = useCookie();
   return (
     <footer
       className="py-12"
@@ -18,7 +20,7 @@ const Footer = () => {
               className="text-xl sm:text-2xl font-bold mb-3 lg:mb-4"
               style={{ color: currentTheme.colors.accentOrange }}
             >
-              CodeTalent Agency
+              CodeTalent
             </h3>
             <p
               className="mb-3 lg:mb-4 leading-relaxed text-sm sm:text-base"
@@ -155,7 +157,7 @@ const Footer = () => {
         >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 lg:gap-4">
             <div className="text-center sm:text-left">
-              © 2024 CodeTalent Agency. Wszystkie prawa zastrzeżone.
+              © 2024 CodeTalent. Wszystkie prawa zastrzeżone.
             </div>
             <div className="flex flex-wrap justify-center sm:justify-end gap-3 lg:gap-6">
               <a
@@ -172,13 +174,13 @@ const Footer = () => {
               >
                 Regulamin
               </a>
-              <a
-                href="#"
-                className="hover:underline transition-colors text-xs sm:text-sm"
+              <button
+                onClick={() => setShowBanner(true)}
+                className="hover:underline transition-colors text-xs sm:text-sm bg-transparent border-none cursor-pointer"
                 style={{ color: currentTheme.colors.accentOrange }}
               >
                 Ustawienia Cookies
-              </a>
+              </button>
             </div>
           </div>
         </div>

@@ -51,7 +51,7 @@ describe('HeroSection', () => {
   it('renders the description text', () => {
     renderWithTheme(<HeroSection />);
     expect(
-      screen.getAllByText(/CodeTalent Agency to agencja rekrutacyjna/i)
+      screen.getAllByText(/CodeTalent to agencja rekrutacyjna/i)
     ).toHaveLength(2); // Mobile and desktop versions
   });
 

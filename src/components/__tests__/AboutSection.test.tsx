@@ -10,7 +10,7 @@ const renderWithTheme = (component: React.ReactElement) => {
 describe('AboutSection', () => {
   it('renders the main heading', () => {
     renderWithTheme(<AboutSection />);
-    expect(screen.getByText('O CodeTalent Agency')).toBeInTheDocument();
+    expect(screen.getByText('O CodeTalent')).toBeInTheDocument();
   });
 
   it('renders the description text', () => {

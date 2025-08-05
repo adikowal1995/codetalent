@@ -10,7 +10,7 @@ const renderWithTheme = (component: React.ReactElement) => {
 describe('Footer', () => {
   it('renders the company name', () => {
     renderWithTheme(<Footer />);
-    expect(screen.getByText('CodeTalent Agency')).toBeInTheDocument();
+    expect(screen.getByText('CodeTalent')).toBeInTheDocument();
   });
 
   it('renders the company description', () => {
@@ -61,6 +61,6 @@ describe('Footer', () => {
 
   it('renders copyright information', () => {
     renderWithTheme(<Footer />);
-    expect(screen.getByText(/© 2024 CodeTalent Agency/i)).toBeInTheDocument();
+    expect(screen.getByText(/© 2024 CodeTalent/i)).toBeInTheDocument();
   });
 });

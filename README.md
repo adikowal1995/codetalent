@@ -1,73 +1,92 @@
-# Welcome to your Lovable project
+# CodeTalent - IT Recruitment Agency Website
 
-## Project info
+A modern, responsive website for CodeTalent, a specialized IT recruitment agency. Built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/04f11d96-d3fc-41de-96e3-3b1f3da5bcc2
+## Features
 
-## How can I edit this code?
+- **Modern Design**: Clean, professional interface with customizable themes
+- **GDPR Compliant**: Cookie banner with granular consent management
+- **Responsive**: Works perfectly on all devices
+- **Interactive Calculator**: Salary calculator for IT recruitment process
+- **Performance Optimized**: Fast loading with optimized images and code splitting
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18 with TypeScript
+- **Styling**: Tailwind CSS with shadcn/ui components
+- **Build Tool**: Vite
+- **Testing**: Vitest with React Testing Library
+- **Deployment**: GitHub Pages ready
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/04f11d96-d3fc-41de-96e3-3b1f3da5bcc2) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v18 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd codetalent
+```
 
-Follow these steps:
+2. Install dependencies:
+```bash
+npm install
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to `http://localhost:3000`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run test` - Run tests
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/          # React components
+│   ├── ui/             # shadcn/ui components
+│   └── __tests__/      # Component tests
+├── contexts/           # React contexts (Theme, Cookie)
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions and configurations
+├── pages/              # Page components
+└── styles/             # Global styles
+```
 
-This project is built with:
+## Key Components
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **CookieBanner**: GDPR-compliant cookie consent management
+- **SalaryCalculator**: Interactive recruitment cost calculator
+- **ThemeSwitcher**: Dynamic theme customization
+- **Navigation**: Responsive navigation with mobile menu
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/04f11d96-d3fc-41de-96e3-3b1f3da5bcc2) and click on Share -> Publish.
+The project is configured for GitHub Pages deployment. Simply push to the main branch and GitHub Actions will automatically build and deploy the site.
 
-## Can I connect a custom domain to my Lovable project?
+## Contributing
 
-Yes, you can!
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests: `npm run test`
+5. Submit a pull request
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## License
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is proprietary to CodeTalent. All rights reserved.

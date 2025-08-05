@@ -182,7 +182,7 @@ const AboutSection = () => {
               className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6"
               style={{ color: currentTheme.colors.textPrimary }}
             >
-              O CodeTalent Agency
+              O CodeTalent
             </h2>
             <p
               className="text-base sm:text-lg mb-6 lg:mb-8 leading-relaxed"

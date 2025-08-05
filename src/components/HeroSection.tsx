@@ -46,7 +46,7 @@ const HeroSection = () => {
               className="text-base sm:text-lg leading-relaxed px-4"
               style={{ color: currentTheme.colors.textLight + 'CC' }}
             >
-              CodeTalent Agency to agencja rekrutacyjna specjalizująca się w
+              CodeTalent to agencja rekrutacyjna specjalizująca się w
               pozyskiwaniu najlepszych specjalistów IT. Oferujemy permanent
               placements dopasowane do Twoich potrzeb biznesowych.
             </p>
@@ -161,7 +161,7 @@ const HeroSection = () => {
               className="text-lg lg:text-xl mb-8 leading-relaxed"
               style={{ color: currentTheme.colors.textLight + 'CC' }}
             >
-              CodeTalent Agency to agencja rekrutacyjna specjalizująca się w
+              CodeTalent to agencja rekrutacyjna specjalizująca się w
               pozyskiwaniu najlepszych specjalistów IT. Oferujemy permanent
               placements dopasowane do Twoich potrzeb biznesowych.
             </p>
