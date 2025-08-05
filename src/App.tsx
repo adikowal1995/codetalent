@@ -20,7 +20,9 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter
-            basename={process.env.NODE_ENV === 'production' ? '/codetalent' : ''}
+            basename={
+              process.env.NODE_ENV === 'production' ? '/codetalent' : ''
+            }
           >
             <Routes>
               <Route path="/" element={<Index />} />

@@ -2,7 +2,7 @@ import { useCookie } from '@/contexts/CookieContext';
 
 export const useCookieConsent = () => {
   const { cookieConsent, hasConsented } = useCookie();
-  
+
   return {
     hasConsented,
     analytics: cookieConsent.analytics,
@@ -10,4 +10,4 @@ export const useCookieConsent = () => {
     preferences: cookieConsent.preferences,
     necessary: cookieConsent.necessary, // Always true
   };
-}; 
+};

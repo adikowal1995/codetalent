@@ -37,7 +37,7 @@ export const CookieProvider: React.FC<CookieProviderProps> = ({ children }) => {
     marketing: false,
     preferences: false,
   });
-  
+
   const [hasConsented, setHasConsented] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
 
@@ -45,7 +45,7 @@ export const CookieProvider: React.FC<CookieProviderProps> = ({ children }) => {
     // Check if user has already made a choice
     const savedConsent = localStorage.getItem('cookieConsent');
     const consentTimestamp = localStorage.getItem('cookieConsentTimestamp');
-    
+
     if (savedConsent) {
       try {
         const parsed = JSON.parse(savedConsent);
@@ -65,7 +65,7 @@ export const CookieProvider: React.FC<CookieProviderProps> = ({ children }) => {
     setCookieConsent(consent);
     setHasConsented(true);
     setShowBanner(false);
-    
+
     // Save to localStorage with timestamp
     localStorage.setItem('cookieConsent', JSON.stringify(consent));
     localStorage.setItem('cookieConsentTimestamp', new Date().toISOString());
@@ -120,4 +120,4 @@ export const useCookie = (): CookieContextType => {
     throw new Error('useCookie must be used within a CookieProvider');
   }
   return context;
-}; 
+};

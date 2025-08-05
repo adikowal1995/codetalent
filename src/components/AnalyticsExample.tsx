@@ -10,7 +10,7 @@ const AnalyticsExample: React.FC = () => {
     if (hasConsented && analytics) {
       // Example: Initialize Google Analytics
       console.log('Analytics enabled - initializing tracking');
-      
+
       // Example: Track page view
       if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('config', 'GA_MEASUREMENT_ID', {
@@ -25,7 +25,7 @@ const AnalyticsExample: React.FC = () => {
     // Only initialize marketing tracking if user has consented
     if (hasConsented && marketing) {
       console.log('Marketing tracking enabled');
-      
+
       // Example: Initialize Facebook Pixel
       if (typeof window !== 'undefined' && window.fbq) {
         window.fbq('init', 'FACEBOOK_PIXEL_ID');
@@ -39,4 +39,4 @@ const AnalyticsExample: React.FC = () => {
   return null;
 };
 
-export default AnalyticsExample; 
+export default AnalyticsExample;

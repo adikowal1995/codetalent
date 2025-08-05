@@ -32,7 +32,7 @@ import CookieBanner from '@/components/CookieBanner';
 <CookieProvider>
   <CookieBanner />
   {/* Your app content */}
-</CookieProvider>
+</CookieProvider>;
 ```
 
 ### Checking Cookie Consent
@@ -43,7 +43,8 @@ Use the `useCookieConsent` hook to check consent status:
 import { useCookieConsent } from '@/hooks/use-cookie-consent';
 
 const MyComponent = () => {
-  const { hasConsented, analytics, marketing, preferences } = useCookieConsent();
+  const { hasConsented, analytics, marketing, preferences } =
+    useCookieConsent();
 
   useEffect(() => {
     if (hasConsented && analytics) {
@@ -64,12 +65,12 @@ For more advanced usage, you can use the cookie context directly:
 import { useCookie } from '@/contexts/CookieContext';
 
 const MyComponent = () => {
-  const { 
-    cookieConsent, 
-    hasConsented, 
-    acceptAll, 
+  const {
+    cookieConsent,
+    hasConsented,
+    acceptAll,
     rejectAll,
-    setCookieConsent 
+    setCookieConsent,
   } = useCookie();
 
   // Your component logic
@@ -79,7 +80,7 @@ const MyComponent = () => {
 ## Banner Behavior
 
 - **First Visit**: Banner appears at the bottom of the page
-- **User Actions**: 
+- **User Actions**:
   - "Akceptuj wszystkie" - Accepts all cookies
   - "Tylko niezbędne" - Accepts only necessary cookies
   - "Odrzuć wszystkie" - Rejects all optional cookies
@@ -90,6 +91,7 @@ const MyComponent = () => {
 ## Styling
 
 The banner uses Tailwind CSS classes and follows the app's design system:
+
 - Fixed positioning at bottom
 - Backdrop blur effect
 - Responsive design
@@ -159,4 +161,4 @@ The banner will appear on first visit. To test different scenarios:
 
 - Modern browsers with localStorage support
 - Responsive design for mobile devices
-- Graceful degradation for older browsers 
+- Graceful degradation for older browsers

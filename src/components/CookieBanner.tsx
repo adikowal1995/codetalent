@@ -7,7 +7,15 @@ import { Separator } from '@/components/ui/separator';
 import { X, Settings, Info } from 'lucide-react';
 
 const CookieBanner: React.FC = () => {
-  const { showBanner, setShowBanner, acceptAll, rejectAll, acceptNecessary, setCookieConsent, cookieConsent } = useCookie();
+  const {
+    showBanner,
+    setShowBanner,
+    acceptAll,
+    rejectAll,
+    acceptNecessary,
+    setCookieConsent,
+    cookieConsent,
+  } = useCookie();
   const [showDetails, setShowDetails] = useState(false);
   const [tempConsent, setTempConsent] = useState(cookieConsent);
 
@@ -40,29 +48,30 @@ const CookieBanner: React.FC = () => {
                 <Info className="h-4 w-4 text-muted-foreground" />
                 <h3 className="text-sm font-medium">Używamy plików cookie</h3>
               </div>
-                             <p className="text-sm text-muted-foreground leading-relaxed">
-                 Używamy plików cookie, aby zapewnić najlepsze doświadczenia na naszej stronie. 
-                 Niektóre pliki cookie są niezbędne do działania strony, inne pomagają nam ją ulepszać.
-                 Więcej informacji znajdziesz w naszej{' '}
-                 <a 
-                   href="/polityka-prywatnosci.html" 
-                   className="text-primary underline hover:text-primary/80"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                 >
-                   Polityce Prywatności
-                 </a>
-                 {' '}i{' '}
-                 <a 
-                   href="/cookie-policy.html" 
-                   className="text-primary underline hover:text-primary/80"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                 >
-                   Polityce Cookie
-                 </a>
-                 .
-               </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Używamy plików cookie, aby zapewnić najlepsze doświadczenia na
+                naszej stronie. Niektóre pliki cookie są niezbędne do działania
+                strony, inne pomagają nam ją ulepszać. Więcej informacji
+                znajdziesz w naszej{' '}
+                <a
+                  href="/polityka-prywatnosci.html"
+                  className="text-primary underline hover:text-primary/80"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Polityce Prywatności
+                </a>{' '}
+                i{' '}
+                <a
+                  href="/cookie-policy.html"
+                  className="text-primary underline hover:text-primary/80"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Polityce Cookie
+                </a>
+                .
+              </p>
             </div>
             <Button
               variant="ghost"
@@ -79,10 +88,20 @@ const CookieBanner: React.FC = () => {
             <Button onClick={handleAcceptAll} size="sm" className="text-xs">
               Akceptuj wszystkie
             </Button>
-            <Button onClick={handleAcceptNecessary} variant="outline" size="sm" className="text-xs">
+            <Button
+              onClick={handleAcceptNecessary}
+              variant="outline"
+              size="sm"
+              className="text-xs"
+            >
               Tylko niezbędne
             </Button>
-            <Button onClick={handleRejectAll} variant="outline" size="sm" className="text-xs">
+            <Button
+              onClick={handleRejectAll}
+              variant="outline"
+              size="sm"
+              className="text-xs"
+            >
               Odrzuć wszystkie
             </Button>
             <Button
@@ -102,9 +121,12 @@ const CookieBanner: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
-                    <Label className="text-sm font-medium">Niezbędne pliki cookie</Label>
+                    <Label className="text-sm font-medium">
+                      Niezbędne pliki cookie
+                    </Label>
                     <p className="text-xs text-muted-foreground">
-                      Zapewniają podstawowe funkcje strony. Nie można ich wyłączyć.
+                      Zapewniają podstawowe funkcje strony. Nie można ich
+                      wyłączyć.
                     </p>
                   </div>
                   <Switch checked={true} disabled />
@@ -114,14 +136,17 @@ const CookieBanner: React.FC = () => {
 
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
-                    <Label className="text-sm font-medium">Analityczne pliki cookie</Label>
+                    <Label className="text-sm font-medium">
+                      Analityczne pliki cookie
+                    </Label>
                     <p className="text-xs text-muted-foreground">
-                      Pomagają nam zrozumieć, jak użytkownicy korzystają ze strony.
+                      Pomagają nam zrozumieć, jak użytkownicy korzystają ze
+                      strony.
                     </p>
                   </div>
                   <Switch
                     checked={tempConsent.analytics}
-                    onCheckedChange={(checked) =>
+                    onCheckedChange={checked =>
                       setTempConsent(prev => ({ ...prev, analytics: checked }))
                     }
                   />
@@ -131,14 +156,16 @@ const CookieBanner: React.FC = () => {
 
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
-                    <Label className="text-sm font-medium">Marketingowe pliki cookie</Label>
+                    <Label className="text-sm font-medium">
+                      Marketingowe pliki cookie
+                    </Label>
                     <p className="text-xs text-muted-foreground">
                       Używane do wyświetlania spersonalizowanych reklam.
                     </p>
                   </div>
                   <Switch
                     checked={tempConsent.marketing}
-                    onCheckedChange={(checked) =>
+                    onCheckedChange={checked =>
                       setTempConsent(prev => ({ ...prev, marketing: checked }))
                     }
                   />
@@ -148,22 +175,31 @@ const CookieBanner: React.FC = () => {
 
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
-                    <Label className="text-sm font-medium">Pliki cookie preferencji</Label>
+                    <Label className="text-sm font-medium">
+                      Pliki cookie preferencji
+                    </Label>
                     <p className="text-xs text-muted-foreground">
                       Zapamiętują Twoje ustawienia i preferencje.
                     </p>
                   </div>
                   <Switch
                     checked={tempConsent.preferences}
-                    onCheckedChange={(checked) =>
-                      setTempConsent(prev => ({ ...prev, preferences: checked }))
+                    onCheckedChange={checked =>
+                      setTempConsent(prev => ({
+                        ...prev,
+                        preferences: checked,
+                      }))
                     }
                   />
                 </div>
               </div>
 
               <div className="flex gap-2">
-                <Button onClick={handleSavePreferences} size="sm" className="text-xs">
+                <Button
+                  onClick={handleSavePreferences}
+                  size="sm"
+                  className="text-xs"
+                >
                   Zapisz preferencje
                 </Button>
                 <Button
@@ -183,4 +219,4 @@ const CookieBanner: React.FC = () => {
   );
 };
 
-export default CookieBanner; 
+export default CookieBanner;
