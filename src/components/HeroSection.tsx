@@ -14,19 +14,13 @@ const HeroSection = () => {
       className="min-h-screen flex items-center py-16"
       style={{
         background:
-          currentTheme.name === 'Theme 3'
-            ? `linear-gradient(135deg, #1e3a8a 0%, ${currentTheme.colors.primaryBlue} 30%, ${currentTheme.colors.secondaryGray} 70%, ${currentTheme.colors.accentGreen} 100%)`
-            : currentTheme.name === 'Theme 4'
-              ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueLight} 30%, ${currentTheme.colors.secondaryGray} 70%, ${currentTheme.colors.accentGreen} 100%)`
-              : currentTheme.name === 'Theme 5'
-                ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.secondaryGray} 30%, ${currentTheme.colors.secondaryGrayLight} 70%, ${currentTheme.colors.accentGreen} 100%)`
-                : currentTheme.name === 'Theme 6'
-                  ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.secondaryGray} 30%, ${currentTheme.colors.secondaryGrayLight} 70%, ${currentTheme.colors.accentOrange} 100%)`
-                  : currentTheme.name === 'Theme 7'
-                    ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.secondaryGray} 30%, ${currentTheme.colors.accentGreen} 70%, ${currentTheme.colors.accentOrange} 100%)`
-                    : currentTheme.name === 'Theme Master'
-                      ? `linear-gradient(135deg, #1e3a8a 0%, ${currentTheme.colors.primaryBlue} 30%, ${currentTheme.colors.secondaryGray} 70%, ${currentTheme.colors.accentGreen} 100%)`
-                      : `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
+          currentTheme.name === 'Theme 4'
+            ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueLight} 30%, ${currentTheme.colors.secondaryGray} 70%, ${currentTheme.colors.accentGreen} 100%)`
+            : currentTheme.name === 'Theme 6'
+              ? `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.secondaryGray} 30%, ${currentTheme.colors.secondaryGrayLight} 70%, ${currentTheme.colors.accentOrange} 100%)`
+              : currentTheme.name === 'Theme Master'
+                ? `linear-gradient(135deg, #1e3a8a 0%, ${currentTheme.colors.primaryBlue} 30%, ${currentTheme.colors.secondaryGray} 70%, ${currentTheme.colors.accentGreen} 100%)`
+                : `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
         color: currentTheme.colors.textLight,
       }}
     >

@@ -21,7 +21,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [currentThemeKey, setCurrentThemeKey] = useState<ThemeKey>('blue');
+  const [currentThemeKey, setCurrentThemeKey] = useState<ThemeKey>('darkBlue');
 
   const setTheme = (themeKey: ThemeKey) => {
     setCurrentThemeKey(themeKey);
