@@ -4,6 +4,13 @@ import { useCookie } from '@/contexts/CookieContext';
 const Footer = () => {
   const { currentTheme } = useTheme();
   const { setShowBanner } = useCookie();
+  
+  // Debug function to reset cookie consent (for testing)
+  const resetCookieConsent = () => {
+    localStorage.removeItem('cookieConsent');
+    localStorage.removeItem('cookieConsentTimestamp');
+    setShowBanner(true);
+  };
   return (
     <footer
       className="py-12"
@@ -180,6 +187,14 @@ const Footer = () => {
                 style={{ color: currentTheme.colors.accentOrange }}
               >
                 Ustawienia Cookies
+              </button>
+              <button
+                onClick={resetCookieConsent}
+                className="hover:underline transition-colors text-xs sm:text-sm bg-transparent border-none cursor-pointer"
+                style={{ color: currentTheme.colors.accentOrange }}
+                title="Reset cookie consent for testing"
+              >
+                Reset Cookies (Debug)
               </button>
             </div>
           </div>
