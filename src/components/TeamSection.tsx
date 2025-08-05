@@ -34,7 +34,12 @@ const TeamSection = () => {
     <section
       id="team"
       className="py-16"
-      style={{ backgroundColor: currentTheme.colors.bgTertiary }}
+      style={{
+        backgroundColor:
+          currentTheme.name === 'Theme Master 1.1'
+            ? '#3C6E71'
+            : currentTheme.colors.bgTertiary,
+      }}
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">

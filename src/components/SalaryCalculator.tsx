@@ -936,7 +936,10 @@ const SalaryCalculator = () => {
     <section
       id="calculator"
       className="py-16"
-      style={{ backgroundColor: '#f9fafb' }}
+      style={{
+        backgroundColor:
+          currentTheme.name === 'Theme Master 1.1' ? '#F2E9E4' : '#f9fafb',
+      }}
     >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
@@ -950,13 +953,23 @@ const SalaryCalculator = () => {
             <CardHeader>
               <CardTitle
                 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center"
-                style={{ color: currentTheme.colors.textPrimary }}
+                style={{
+                  color:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#2D3142'
+                      : currentTheme.colors.textPrimary,
+                }}
               >
                 Kalkulator procesu rekrutacyjnego
               </CardTitle>
               <p
                 className="text-center text-base sm:text-lg lg:text-xl mt-2"
-                style={{ color: currentTheme.colors.textSecondary }}
+                style={{
+                  color:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#4F5D75'
+                      : currentTheme.colors.textSecondary,
+                }}
               >
                 Sprawdź aktualne stawki dla specjalistów IT w Polsce oraz koszt
                 rekrutacji.
@@ -970,7 +983,12 @@ const SalaryCalculator = () => {
                 <div>
                   <label
                     className="block text-base font-medium mb-2"
-                    style={{ color: currentTheme.colors.textPrimary }}
+                    style={{
+                      color:
+                        currentTheme.name === 'Theme Master 1.1'
+                          ? '#2D3142'
+                          : currentTheme.colors.textPrimary,
+                    }}
                   >
                     Rola
                   </label>
@@ -1056,7 +1074,12 @@ const SalaryCalculator = () => {
                 <div>
                   <label
                     className="block text-base font-medium mb-2"
-                    style={{ color: currentTheme.colors.textPrimary }}
+                    style={{
+                      color:
+                        currentTheme.name === 'Theme Master 1.1'
+                          ? '#2D3142'
+                          : currentTheme.colors.textPrimary,
+                    }}
                   >
                     Doświadczenie
                   </label>
@@ -1075,7 +1098,12 @@ const SalaryCalculator = () => {
                 <div>
                   <label
                     className="block text-base font-medium mb-2"
-                    style={{ color: currentTheme.colors.textPrimary }}
+                    style={{
+                      color:
+                        currentTheme.name === 'Theme Master 1.1'
+                          ? '#2D3142'
+                          : currentTheme.colors.textPrimary,
+                    }}
                   >
                     Tryb pracy
                   </label>
@@ -1099,22 +1127,46 @@ const SalaryCalculator = () => {
                   <div
                     className="rounded-lg p-6 text-white"
                     style={{
-                      background: `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
+                      background:
+                        currentTheme.name === 'Theme Master 1.1'
+                          ? 'linear-gradient(135deg, #2D3142 0%, #1a1a2e 100%)'
+                          : `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
                     }}
                   >
-                    <h3 className="text-2xl font-semibold mb-6 text-center">
+                    <h3
+                      className="text-2xl font-semibold mb-6 text-center"
+                      style={{
+                        color:
+                          currentTheme.name === 'Theme Master 1.1'
+                            ? '#FFFFFF'
+                            : 'inherit',
+                      }}
+                    >
                       Wyniki dla: {results.role} • {results.experience} •{' '}
                       {results.workMode}
                     </h3>
 
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                       <div className="bg-white/10 rounded-lg p-4">
-                        <h4 className="text-lg font-semibold mb-3">
+                        <h4
+                          className="text-lg font-semibold mb-3"
+                          style={{
+                            color:
+                              currentTheme.name === 'Theme Master 1.1'
+                                ? '#FFFFFF'
+                                : 'inherit',
+                          }}
+                        >
                           Umowa o pracę (UoP)
                         </h4>
                         <div
                           className="text-2xl font-bold"
-                          style={{ color: currentTheme.colors.accentOrange }}
+                          style={{
+                            color:
+                              currentTheme.name === 'Theme Master 1.1'
+                                ? '#3C6E71'
+                                : currentTheme.colors.accentOrange,
+                          }}
                         >
                           {results.uopMin
                             .toString()
@@ -1131,12 +1183,25 @@ const SalaryCalculator = () => {
                       </div>
 
                       <div className="bg-white/10 rounded-lg p-4">
-                        <h4 className="text-lg font-semibold mb-3">
+                        <h4
+                          className="text-lg font-semibold mb-3"
+                          style={{
+                            color:
+                              currentTheme.name === 'Theme Master 1.1'
+                                ? '#FFFFFF'
+                                : 'inherit',
+                          }}
+                        >
                           Kontrakt B2B
                         </h4>
                         <div
                           className="text-2xl font-bold"
-                          style={{ color: currentTheme.colors.accentOrange }}
+                          style={{
+                            color:
+                              currentTheme.name === 'Theme Master 1.1'
+                                ? '#3C6E71'
+                                : currentTheme.colors.accentOrange,
+                          }}
                         >
                           {results.b2bMin
                             .toString()
@@ -1154,12 +1219,25 @@ const SalaryCalculator = () => {
                     </div>
 
                     <div className="bg-white/10 rounded-lg p-4 mb-6">
-                      <h4 className="text-lg font-semibold mb-3">
+                      <h4
+                        className="text-lg font-semibold mb-3"
+                        style={{
+                          color:
+                            currentTheme.name === 'Theme Master 1.1'
+                              ? '#FFFFFF'
+                              : 'inherit',
+                        }}
+                      >
                         Koszt procesu rekrutacji
                       </h4>
                       <div
                         className="text-2xl font-bold"
-                        style={{ color: currentTheme.colors.accentOrange }}
+                        style={{
+                          color:
+                            currentTheme.name === 'Theme Master 1.1'
+                              ? '#3C6E71'
+                              : currentTheme.colors.accentOrange,
+                        }}
                       >
                         {results.recruitmentCost.toLocaleString()} PLN
                       </div>
@@ -1173,10 +1251,12 @@ const SalaryCalculator = () => {
                       <Button
                         onClick={handleSendInquiry}
                         size="lg"
-                        className="shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base hover:scale-105"
+                        className="shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base hover:scale-105 text-white"
                         style={{
-                          backgroundColor: currentTheme.colors.accentOrange,
-                          color: '#22577a',
+                          backgroundColor:
+                            currentTheme.name === 'Theme Master 1.1'
+                              ? '#3C6E71'
+                              : currentTheme.colors.accentOrange,
                           border: 'none',
                         }}
                       >
@@ -1186,11 +1266,27 @@ const SalaryCalculator = () => {
 
                     {/* Role Description Section */}
                     <div className="mt-6">
-                      <h4 className="text-lg font-semibold mb-3 text-center">
+                      <h4
+                        className="text-lg font-semibold mb-3 text-center"
+                        style={{
+                          color:
+                            currentTheme.name === 'Theme Master 1.1'
+                              ? '#9A8C98'
+                              : 'inherit',
+                        }}
+                      >
                         Opis stanowiska
                       </h4>
                       <div className="bg-white/10 rounded-lg p-4">
-                        <p className="text-sm leading-relaxed opacity-90">
+                        <p
+                          className="text-sm leading-relaxed opacity-90"
+                          style={{
+                            color:
+                              currentTheme.name === 'Theme Master 1.1'
+                                ? '#9A8C98'
+                                : 'inherit',
+                          }}
+                        >
                           {results.role === 'Java Developer' &&
                             'Specjalizuje się w budowaniu zaawansowanego oprogramowania back-endowego i systemów rozproszonych w ekosystemie Java. Kluczowe technologie to Java SE/EE, Spring (Boot, MVC, Security, Data), Hibernate, JPA, Maven/Gradle, REST API, SOAP, Docker oraz bazy relacyjne (MySQL, PostgreSQL, Oracle). Java Developerzy często angażują się w projekty mikroserwisowe, integracje zewnętrzne, optymalizację wydajności oraz testy jednostkowe (JUnit, Mockito). Pracują w metodykach Agile/Scrum i często korzystają z narzędzi CI/CD (Jenkins, GitLab CI).'}
                           {results.role === '.NET Developer' &&

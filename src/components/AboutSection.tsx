@@ -173,20 +173,33 @@ const AboutSection = () => {
       ref={sectionRef}
       id="about"
       className="py-16"
-      style={{ backgroundColor: '#f9fafb' }}
+      style={{
+        backgroundColor:
+          currentTheme.name === 'Theme Master 1.1' ? '#C9ADA7' : '#f9fafb',
+      }}
     >
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <div>
             <h2
               className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 lg:mb-6"
-              style={{ color: currentTheme.colors.textPrimary }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#0f172a'
+                    : currentTheme.colors.textPrimary,
+              }}
             >
               O CodeTalent
             </h2>
             <p
               className="text-base sm:text-lg mb-6 lg:mb-8 leading-relaxed"
-              style={{ color: currentTheme.colors.textSecondary }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#475569'
+                    : currentTheme.colors.textSecondary,
+              }}
             >
               Jesteśmy agencją rekrutacyjną, która specjalizuje się w
               pozyskiwaniu najlepszych specjalistów IT. Nasz zespół ma
@@ -200,12 +213,17 @@ const AboutSection = () => {
                   key={index}
                   className="text-center p-3 sm:p-4 rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
                   style={{
-                    border: `1px solid ${currentTheme.colors.borderLight}`,
+                    border: `1px solid ${currentTheme.name === 'Theme Master 1.1' ? '#3C6E71' : currentTheme.colors.borderLight}`,
                   }}
                 >
                   <div
                     className="text-lg sm:text-xl lg:text-2xl font-bold"
-                    style={{ color: currentTheme.colors.primaryBlue }}
+                    style={{
+                      color:
+                        currentTheme.name === 'Theme Master 1.1'
+                          ? '#22577a'
+                          : currentTheme.colors.primaryBlue,
+                    }}
                   >
                     {stat.prefix || ''}
                     {stat.value}
@@ -225,7 +243,12 @@ const AboutSection = () => {
           <div className="space-y-3 lg:space-y-4 mt-8 lg:mt-0">
             <h3
               className="text-xl sm:text-2xl font-semibold mb-4 lg:mb-6"
-              style={{ color: currentTheme.colors.textPrimary }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#0f172a'
+                    : currentTheme.colors.textPrimary,
+              }}
             >
               Nasze wartości
             </h3>
@@ -234,8 +257,11 @@ const AboutSection = () => {
                 key={index}
                 className="group transition-all duration-300 hover:shadow-lg"
                 style={{
-                  border: `1px solid ${currentTheme.colors.borderLight}`,
-                  backgroundColor: currentTheme.colors.bgPrimary,
+                  border: `1px solid ${currentTheme.name === 'Theme Master 1.1' ? '#3C6E71' : currentTheme.colors.borderLight}`,
+                  backgroundColor:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#F2E9E4'
+                      : currentTheme.colors.bgPrimary,
                 }}
               >
                 <CardContent className="p-4 sm:p-6">
@@ -243,7 +269,10 @@ const AboutSection = () => {
                     <div
                       className={`flex-shrink-0 p-1 transition-colors ${index === 0 ? 'border-2 border-current rounded-full' : ''}`}
                       style={{
-                        color: currentTheme.colors.primaryBlue,
+                        color:
+                          currentTheme.name === 'Theme Master 1.1'
+                            ? '#22577a'
+                            : currentTheme.colors.primaryBlue,
                       }}
                     >
                       {value.icon}
@@ -251,13 +280,23 @@ const AboutSection = () => {
                     <div className="flex-1 min-w-0">
                       <h4
                         className="text-lg sm:text-xl font-semibold mb-2 lg:mb-3 transition-colors group-hover:opacity-80"
-                        style={{ color: currentTheme.colors.textPrimary }}
+                        style={{
+                          color:
+                            currentTheme.name === 'Theme Master 1.1'
+                              ? '#0f172a'
+                              : currentTheme.colors.textPrimary,
+                        }}
                       >
                         {value.title}
                       </h4>
                       <p
                         className="leading-relaxed text-sm sm:text-base"
-                        style={{ color: currentTheme.colors.textSecondary }}
+                        style={{
+                          color:
+                            currentTheme.name === 'Theme Master 1.1'
+                              ? '#475569'
+                              : currentTheme.colors.textSecondary,
+                        }}
                       >
                         {value.description}
                       </p>

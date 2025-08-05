@@ -32,7 +32,12 @@ const Navigation = () => {
           <button
             onClick={() => scrollToSection('hero')}
             className="text-2xl font-bold transition-colors hover:opacity-80"
-            style={{ color: currentTheme.colors.primaryBlue }}
+            style={{
+              color:
+                currentTheme.name === 'Theme Master 1.1'
+                  ? '#22577a'
+                  : currentTheme.colors.primaryBlue,
+            }}
           >
             CodeTalent
           </button>
@@ -54,8 +59,14 @@ const Navigation = () => {
               onClick={() => scrollToSection('calculator')}
               className="transition-all duration-300 hover:shadow-lg"
               style={{
-                backgroundColor: currentTheme.colors.accentOrange,
-                color: '#22577a',
+                backgroundColor:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#3C6E71'
+                    : currentTheme.colors.accentOrange,
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#FFFFFF'
+                    : '#22577a',
                 border: 'none',
               }}
             >
@@ -109,8 +120,14 @@ const Navigation = () => {
                 onClick={() => scrollToSection('calculator')}
                 className="w-full transition-all duration-300 hover:shadow-lg"
                 style={{
-                  backgroundColor: currentTheme.colors.accentOrange,
-                  color: '#22577a',
+                  backgroundColor:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#3C6E71'
+                      : currentTheme.colors.accentOrange,
+                  color:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#FFFFFF'
+                      : '#22577a',
                   border: 'none',
                 }}
               >

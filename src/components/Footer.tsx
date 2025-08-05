@@ -16,8 +16,13 @@ const Footer = () => {
       className="py-12"
       style={{
         background:
-          'linear-gradient(135deg, rgb(34, 87, 122) 0%, rgb(26, 69, 97) 100%)',
-        color: currentTheme.colors.textLight,
+          currentTheme.name === 'Theme Master 1.1'
+            ? '#FFFFFF'
+            : 'linear-gradient(135deg, rgb(34, 87, 122) 0%, rgb(26, 69, 97) 100%)',
+        color:
+          currentTheme.name === 'Theme Master 1.1'
+            ? '#004e98'
+            : currentTheme.colors.textLight,
       }}
     >
       <div className="container mx-auto px-4">
@@ -25,13 +30,23 @@ const Footer = () => {
           <div className="sm:col-span-2 lg:col-span-2">
             <h3
               className="text-xl sm:text-2xl font-bold mb-3 lg:mb-4"
-              style={{ color: currentTheme.colors.accentOrange }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#3C6E71'
+                    : currentTheme.colors.accentOrange,
+              }}
             >
               CodeTalent
             </h3>
             <p
               className="mb-3 lg:mb-4 leading-relaxed text-sm sm:text-base"
-              style={{ color: currentTheme.colors.textLight + 'CC' }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#004e98'
+                    : currentTheme.colors.textLight + 'CC',
+              }}
             >
               Specjalizujemy się w rekrutacjach stałych najlepszych specjalistów
               IT. Tworzymy długoterminowe partnerstwa oparte na zaufaniu i
@@ -39,7 +54,12 @@ const Footer = () => {
             </p>
             <div
               className="space-y-2 lg:space-y-3 mb-3 lg:mb-4"
-              style={{ color: currentTheme.colors.textLight + 'CC' }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#004e98'
+                    : currentTheme.colors.textLight + 'CC',
+              }}
             >
               <div className="flex items-center gap-3 text-sm sm:text-base">
                 <span>+48 798 592 333</span>
@@ -53,13 +73,23 @@ const Footer = () => {
           <div>
             <h4
               className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
-              style={{ color: currentTheme.colors.textLight }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#004e98'
+                    : currentTheme.colors.textLight,
+              }}
             >
               Nasze usługi
             </h4>
             <div
               className="space-y-2 lg:space-y-3"
-              style={{ color: currentTheme.colors.textLight + 'CC' }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#004e98'
+                    : currentTheme.colors.textLight + 'CC',
+              }}
             >
               <div className="flex items-center gap-3 text-sm sm:text-base">
                 <span>Rekrutacje</span>
@@ -79,13 +109,23 @@ const Footer = () => {
           <div>
             <h4
               className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
-              style={{ color: currentTheme.colors.textLight }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#004e98'
+                    : currentTheme.colors.textLight,
+              }}
             >
               Branże
             </h4>
             <div
               className="space-y-2 lg:space-y-3"
-              style={{ color: currentTheme.colors.textLight + 'CC' }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#004e98'
+                    : currentTheme.colors.textLight + 'CC',
+              }}
             >
               <div className="flex items-center gap-3 text-sm sm:text-base">
                 <span>Software House</span>
@@ -108,13 +148,23 @@ const Footer = () => {
           <div>
             <h4
               className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
-              style={{ color: currentTheme.colors.textLight }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#004e98'
+                    : currentTheme.colors.textLight,
+              }}
             >
               Specjalności
             </h4>
             <div
               className="space-y-2 lg:space-y-3"
-              style={{ color: currentTheme.colors.textLight + 'CC' }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#004e98'
+                    : currentTheme.colors.textLight + 'CC',
+              }}
             >
               <div className="flex items-center gap-3 text-sm sm:text-base">
                 <span>Cybersecurity</span>
@@ -137,7 +187,12 @@ const Footer = () => {
           <div>
             <h4
               className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
-              style={{ color: currentTheme.colors.textLight }}
+              style={{
+                color:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#004e98'
+                    : currentTheme.colors.textLight,
+              }}
             >
               Social Media
             </h4>
@@ -145,7 +200,12 @@ const Footer = () => {
               <a
                 href="https://linkedin.com/company/codetalent"
                 className="flex items-center gap-3 transition-colors hover:opacity-80 text-sm sm:text-base"
-                style={{ color: currentTheme.colors.textLight + 'CC' }}
+                style={{
+                  color:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#004e98'
+                      : currentTheme.colors.textLight + 'CC',
+                }}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -158,8 +218,14 @@ const Footer = () => {
         <div
           className="border-t mt-6 lg:mt-8 pt-4 lg:pt-6 text-center text-xs sm:text-sm"
           style={{
-            borderColor: currentTheme.colors.textLight + '33',
-            color: currentTheme.colors.textLight + '99',
+            borderColor:
+              currentTheme.name === 'Theme Master 1.1'
+                ? '#004e98' + '33'
+                : currentTheme.colors.textLight + '33',
+            color:
+              currentTheme.name === 'Theme Master 1.1'
+                ? '#004e98' + '99'
+                : currentTheme.colors.textLight + '99',
           }}
         >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 lg:gap-4">
@@ -170,28 +236,48 @@ const Footer = () => {
               <a
                 href="/polityka-prywatnosci.html"
                 className="hover:underline transition-colors text-xs sm:text-sm"
-                style={{ color: currentTheme.colors.accentOrange }}
+                style={{
+                  color:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#3C6E71'
+                      : currentTheme.colors.accentOrange,
+                }}
               >
                 Polityka Prywatności
               </a>
               <a
                 href="/regulamin.html"
                 className="hover:underline transition-colors text-xs sm:text-sm"
-                style={{ color: currentTheme.colors.accentOrange }}
+                style={{
+                  color:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#3C6E71'
+                      : currentTheme.colors.accentOrange,
+                }}
               >
                 Regulamin
               </a>
               <button
                 onClick={() => setShowBanner(true)}
                 className="hover:underline transition-colors text-xs sm:text-sm bg-transparent border-none cursor-pointer"
-                style={{ color: currentTheme.colors.accentOrange }}
+                style={{
+                  color:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#3C6E71'
+                      : currentTheme.colors.accentOrange,
+                }}
               >
                 Ustawienia Cookies
               </button>
               <button
                 onClick={resetCookieConsent}
                 className="hover:underline transition-colors text-xs sm:text-sm bg-transparent border-none cursor-pointer"
-                style={{ color: currentTheme.colors.accentOrange }}
+                style={{
+                  color:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#3C6E71'
+                      : currentTheme.colors.accentOrange,
+                }}
                 title="Reset cookie consent for testing"
               >
                 Reset Cookies (Debug)

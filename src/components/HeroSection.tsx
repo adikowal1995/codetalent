@@ -21,7 +21,7 @@ const HeroSection = () => {
               : currentTheme.name === 'Theme Master'
                 ? `linear-gradient(135deg, #1e3a8a 0%, ${currentTheme.colors.primaryBlue} 30%, ${currentTheme.colors.secondaryGray} 70%, ${currentTheme.colors.accentGreen} 100%)`
                 : currentTheme.name === 'Theme Master 1.1'
-                  ? `linear-gradient(to bottom, #2D3142 0%, #2D3142 30%, #4F5D75 30%, #4F5D75 70%, #9A8C98 70%, #9A8C98 90%, #3C6E71 90%, #3C6E71 100%)`
+                  ? `linear-gradient(135deg, #2D3142 0%, #4F5D75 70%, #3C6E71 90%, #9A8C98 100%)`
                   : `linear-gradient(135deg, ${currentTheme.colors.primaryBlue} 0%, ${currentTheme.colors.primaryBlueDark} 100%)`,
         color: currentTheme.colors.textLight,
       }}
@@ -32,9 +32,25 @@ const HeroSection = () => {
           {/* 1. Title and Description */}
           <div className="animate-fade-in text-center">
             <h1 className="text-3xl sm:text-4xl font-bold mb-4">
-              Specjaliści IT
+              <span
+                style={{
+                  color:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#FFFFFF'
+                      : currentTheme.colors.textLight,
+                }}
+              >
+                Specjaliści IT
+              </span>
               <br />
-              <span style={{ color: currentTheme.colors.accentOrange }}>
+              <span
+                style={{
+                  color:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#3C6E71'
+                      : currentTheme.colors.accentOrange,
+                }}
+              >
                 dla Twojej firmy
               </span>
             </h1>
@@ -50,30 +66,31 @@ const HeroSection = () => {
 
           {/* 2. Buttons */}
           <div className="flex flex-col justify-center gap-3 px-4">
-            <Button
-              size="lg"
-              className="w-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 text-sm hover:scale-105"
+            <button
+              className="w-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 text-sm hover:scale-105 text-white font-medium rounded-md"
               style={{
-                backgroundColor: currentTheme.colors.accentOrange,
-                color: '#22577a',
+                backgroundColor:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#3C6E71'
+                    : currentTheme.colors.accentOrange,
                 border: 'none',
               }}
               onClick={scrollToCalculator}
             >
               Sprawdź koszt procesu rekrutacji
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="w-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 text-sm hover:scale-105"
+            </button>
+            <button
+              className="w-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 text-sm hover:scale-105 text-white font-medium rounded-md border-2"
               style={{
-                borderColor: currentTheme.colors.accentOrange,
-                color: currentTheme.colors.accentOrange,
+                borderColor:
+                  currentTheme.name === 'Theme Master 1.1'
+                    ? '#3C6E71'
+                    : currentTheme.colors.accentOrange,
                 backgroundColor: 'transparent',
               }}
             >
               Umów się na spotkanie
-            </Button>
+            </button>
           </div>
 
           {/* 3. Image */}
@@ -162,30 +179,31 @@ const HeroSection = () => {
               placements dopasowane do Twoich potrzeb biznesowych.
             </p>
             <div className="flex flex-row justify-start mb-8 gap-4">
-              <Button
-                size="lg"
-                className="px-12 shadow-lg hover:shadow-xl transition-all duration-300 text-base hover:scale-105"
+              <button
+                className="px-12 py-3 shadow-lg hover:shadow-xl transition-all duration-300 text-base hover:scale-105 text-white font-medium rounded-md"
                 style={{
-                  backgroundColor: currentTheme.colors.accentOrange,
-                  color: '#22577a',
+                  backgroundColor:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#3C6E71'
+                      : currentTheme.colors.accentOrange,
                   border: 'none',
                 }}
                 onClick={scrollToCalculator}
               >
                 Sprawdź koszt procesu rekrutacji
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="px-12 shadow-lg hover:shadow-xl transition-all duration-300 text-base hover:scale-105"
+              </button>
+              <button
+                className="px-12 py-3 shadow-lg hover:shadow-xl transition-all duration-300 text-base hover:scale-105 text-white font-medium rounded-md border-2"
                 style={{
-                  borderColor: currentTheme.colors.accentOrange,
-                  color: currentTheme.colors.accentOrange,
+                  borderColor:
+                    currentTheme.name === 'Theme Master 1.1'
+                      ? '#3C6E71'
+                      : currentTheme.colors.accentOrange,
                   backgroundColor: 'transparent',
                 }}
               >
                 Umów się na spotkanie
-              </Button>
+              </button>
             </div>
           </div>
 
