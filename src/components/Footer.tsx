@@ -4,7 +4,7 @@ import { useCookie } from '@/contexts/CookieContext';
 const Footer = () => {
   const { currentTheme } = useTheme();
   const { setShowBanner } = useCookie();
-  
+
   // Debug function to reset cookie consent (for testing)
   const resetCookieConsent = () => {
     localStorage.removeItem('cookieConsent');
