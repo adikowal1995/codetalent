@@ -40,43 +40,41 @@ const renderWithTheme = (component: React.ReactElement) => {
 describe('HeroSection', () => {
   it('renders the main heading', () => {
     renderWithTheme(<HeroSection />);
-    expect(screen.getByText(/Specjaliści IT/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Specjaliści IT/i)).toHaveLength(2); // Mobile and desktop versions
   });
 
   it('renders the subtitle', () => {
     renderWithTheme(<HeroSection />);
-    expect(screen.getByText(/dla Twojej firmy/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/dla Twojej firmy/i)).toHaveLength(2); // Mobile and desktop versions
   });
 
   it('renders the description text', () => {
     renderWithTheme(<HeroSection />);
     expect(
-      screen.getByText(/CodeTalent Agency to agencja rekrutacyjna/i)
-    ).toBeInTheDocument();
+      screen.getAllByText(/CodeTalent Agency to agencja rekrutacyjna/i)
+    ).toHaveLength(2); // Mobile and desktop versions
   });
 
   it('renders the primary call-to-action button', () => {
     renderWithTheme(<HeroSection />);
     expect(
-      screen.getByText(/Sprawdź koszt procesu rekrutacji/i)
-    ).toBeInTheDocument();
+      screen.getAllByText(/Sprawdź koszt procesu rekrutacji/i)
+    ).toHaveLength(2); // Mobile and desktop versions
   });
 
   it('renders the secondary call-to-action button', () => {
     renderWithTheme(<HeroSection />);
-    expect(screen.getByText(/Umów się na spotkanie/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Umów się na spotkanie/i)).toHaveLength(2); // Mobile and desktop versions
   });
 
   it('renders the scroll link', () => {
     renderWithTheme(<HeroSection />);
-    expect(
-      screen.getByText(/Co możemy dla Ciebie zrobić/i)
-    ).toBeInTheDocument();
+    expect(screen.getAllByText(/Co możemy dla Ciebie zrobić/i)).toHaveLength(2); // Mobile and desktop versions
   });
 
   it('renders the hero image', () => {
     renderWithTheme(<HeroSection />);
-    const image = screen.getByAltText('CodeTalent Hero');
-    expect(image).toBeInTheDocument();
+    const images = screen.getAllByAltText('CodeTalent Hero');
+    expect(images).toHaveLength(2); // Mobile and desktop versions
   });
 });

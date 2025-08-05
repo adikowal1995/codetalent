@@ -5,37 +5,37 @@ const ProcessSection = () => {
   const { currentTheme } = useTheme();
   const processSteps = [
     {
-      step: '01',
+      step: '1',
       title: 'Analiza potrzeb',
       description:
         'Szczegółowe omówienie wymagań, kultury firmy i oczekiwań wobec kandydata.',
     },
     {
-      step: '02',
+      step: '2',
       title: 'Sourcing i rekrutacja',
       description:
         'Aktywne poszukiwanie specjalistów w naszej bazie i na rynku pracy.',
     },
     {
-      step: '03',
+      step: '3',
       title: 'Weryfikacja techniczna',
       description:
         'Przeprowadzenie rozmów technicznych i sprawdzenie kompetencji.',
     },
     {
-      step: '04',
+      step: '4',
       title: 'Prezentacja kandydatów',
       description:
         'Przedstawienie sprawdzonych kandydatów wraz z rekomendacjami.',
     },
     {
-      step: '05',
+      step: '5',
       title: 'Wsparcie w procesie',
       description:
         'Pomoc w rozmowach, negocjacjach i finalizacji zatrudnienia.',
     },
     {
-      step: '06',
+      step: '6',
       title: 'Feedback',
       description:
         'Informacja zwrotna dla wszystkich stron, monitorowanie satysfakcji i dalsze wsparcie.',
@@ -72,7 +72,7 @@ const ProcessSection = () => {
               }}
             >
               <CardContent className="p-4 sm:p-6">
-                <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex items-center gap-3 sm:gap-4">
                   <div
                     className="rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-sm sm:text-lg font-bold group-hover:scale-110 transition-transform flex-shrink-0"
                     style={{

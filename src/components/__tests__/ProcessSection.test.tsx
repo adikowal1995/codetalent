@@ -22,12 +22,12 @@ describe('ProcessSection', () => {
 
   it('renders all process steps', () => {
     renderWithTheme(<ProcessSection />);
-    expect(screen.getByText('01')).toBeInTheDocument();
-    expect(screen.getByText('02')).toBeInTheDocument();
-    expect(screen.getByText('03')).toBeInTheDocument();
-    expect(screen.getByText('04')).toBeInTheDocument();
-    expect(screen.getByText('05')).toBeInTheDocument();
-    expect(screen.getByText('06')).toBeInTheDocument();
+    expect(screen.getByText('1')).toBeInTheDocument();
+    expect(screen.getByText('2')).toBeInTheDocument();
+    expect(screen.getByText('3')).toBeInTheDocument();
+    expect(screen.getByText('4')).toBeInTheDocument();
+    expect(screen.getByText('5')).toBeInTheDocument();
+    expect(screen.getByText('6')).toBeInTheDocument();
   });
 
   it('renders step titles', () => {

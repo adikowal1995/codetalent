@@ -76,12 +76,12 @@ All colors MUST be HSL.
       transform: translateY(0px);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-4px);
     }
   }
 
   .animate-float {
-    animation: float 3s ease-in-out infinite;
+    animation: float 2s ease-in-out infinite;
   }
 
   .dark {

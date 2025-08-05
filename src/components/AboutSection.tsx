@@ -241,7 +241,7 @@ const AboutSection = () => {
                 <CardContent className="p-4 sm:p-6">
                   <div className="flex items-center gap-3">
                     <div
-                      className={`flex-shrink-0 p-1 transition-colors ${index === 0 ? 'border-2 border-current rounded-full p-0' : ''}`}
+                      className={`flex-shrink-0 p-1 transition-colors ${index === 0 ? 'border-2 border-current rounded-full' : ''}`}
                       style={{
                         color: currentTheme.colors.primaryBlue,
                       }}
