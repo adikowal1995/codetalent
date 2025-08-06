@@ -175,7 +175,7 @@ const AboutSection = () => {
       className="py-16"
       style={{
         backgroundColor:
-          currentTheme.name === 'Theme Master 1.1' ? '#C9ADA7' : '#f9fafb',
+          currentTheme.name === 'Theme Master 1.1' ? '#F2E9E4' : '#f9fafb',
       }}
     >
       <div className="container mx-auto px-4">
