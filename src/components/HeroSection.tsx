@@ -100,16 +100,16 @@ const HeroSection = () => {
                 <source
                   srcSet={
                     process.env.NODE_ENV === 'production'
-                      ? '/codetalent/images/heroimage.webp'
-                      : '/images/heroimage.webp'
+                      ? '/codetalent/images/Codetalent_hero.webp'
+                      : '/images/Codetalent_hero.webp'
                   }
                   type="image/webp"
                 />
                 <img
                   src={
                     process.env.NODE_ENV === 'production'
-                      ? '/codetalent/images/heroimage.jpg'
-                      : '/images/heroimage.jpg'
+                      ? '/codetalent/images/Codetalent_hero-optimized.jpg'
+                      : '/images/Codetalent_hero-optimized.jpg'
                   }
                   alt="CodeTalent Hero"
                   className="w-full h-auto max-w-sm mx-auto rounded-xl shadow-lg animate-float"
@@ -214,16 +214,16 @@ const HeroSection = () => {
                 <source
                   srcSet={
                     process.env.NODE_ENV === 'production'
-                      ? '/codetalent/images/heroimage.webp'
-                      : '/images/heroimage.webp'
+                      ? '/codetalent/images/Codetalent_hero.webp'
+                      : '/images/Codetalent_hero.webp'
                   }
                   type="image/webp"
                 />
                 <img
                   src={
                     process.env.NODE_ENV === 'production'
-                      ? '/codetalent/images/heroimage.jpg'
-                      : '/images/heroimage.jpg'
+                      ? '/codetalent/images/Codetalent_hero-optimized.jpg'
+                      : '/images/Codetalent_hero-optimized.jpg'
                   }
                   alt="CodeTalent Hero"
                   className="w-full h-auto max-w-2xl mx-auto rounded-2xl shadow-2xl animate-float"
