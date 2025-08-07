@@ -72,7 +72,7 @@ const Footer = () => {
 
           <div>
             <h4
-              className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
+              className="text-base sm:text-lg font-bold mb-3 lg:mb-4"
               style={{
                 color:
                   currentTheme.name === 'Theme Master 1.1'
@@ -92,23 +92,26 @@ const Footer = () => {
               }}
             >
               <div className="flex items-center gap-3 text-sm sm:text-base">
-                <span>Rekrutacje</span>
+                <span>Rekrutacja IT</span>
               </div>
               <div className="flex items-center gap-3 text-sm sm:text-base">
                 <span>Sourcing</span>
               </div>
               <div className="flex items-center gap-3 text-sm sm:text-base">
-                <span>Weryfikacja kandydatów</span>
+                <span>Direct search</span>
               </div>
               <div className="flex items-center gap-3 text-sm sm:text-base">
-                <span>Direct search</span>
+                <span>Headhunting</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm sm:text-base">
+                <span>Executive search</span>
               </div>
             </div>
           </div>
 
           <div>
             <h4
-              className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
+              className="text-base sm:text-lg font-bold mb-3 lg:mb-4"
               style={{
                 color:
                   currentTheme.name === 'Theme Master 1.1'
@@ -128,26 +131,26 @@ const Footer = () => {
               }}
             >
               <div className="flex items-center gap-3 text-sm sm:text-base">
+                <span>Fintech</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm sm:text-base">
+                <span>Startup</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm sm:text-base">
+                <span>E-commerce</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm sm:text-base">
+                <span>Technology</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm sm:text-base">
                 <span>Software House</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm sm:text-base">
-                <span>FinTech</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm sm:text-base">
-                <span>Bankowość</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm sm:text-base">
-                <span>Ubezpiecznia</span>
-              </div>
-              <div className="flex items-center gap-3 text-sm sm:text-base">
-                <span>IT</span>
               </div>
             </div>
           </div>
 
           <div>
             <h4
-              className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
+              className="text-base sm:text-lg font-bold mb-3 lg:mb-4"
               style={{
                 color:
                   currentTheme.name === 'Theme Master 1.1'
@@ -155,7 +158,7 @@ const Footer = () => {
                     : currentTheme.colors.textLight,
               }}
             >
-              Specjalności
+              Specjalizacje
             </h4>
             <div
               className="space-y-2 lg:space-y-3"
@@ -176,17 +179,17 @@ const Footer = () => {
                 <span>Full Stack Developer</span>
               </div>
               <div className="flex items-center gap-3 text-sm sm:text-base">
-                <span>Solution Architect</span>
+                <span>Cloud & DevOps</span>
               </div>
               <div className="flex items-center gap-3 text-sm sm:text-base">
-                <span>Data Engineer</span>
+                <span>Quality Assurance</span>
               </div>
             </div>
           </div>
 
           <div>
             <h4
-              className="text-base sm:text-lg font-semibold mb-3 lg:mb-4"
+              className="text-base sm:text-lg font-bold mb-3 lg:mb-4"
               style={{
                 color:
                   currentTheme.name === 'Theme Master 1.1'

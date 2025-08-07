@@ -34,7 +34,7 @@ describe('Footer', () => {
   it('renders services section', () => {
     renderWithProviders(<Footer />);
     expect(screen.getByText('Nasze usługi')).toBeInTheDocument();
-    expect(screen.getByText('Rekrutacje')).toBeInTheDocument();
+    expect(screen.getByText('Rekrutacja IT')).toBeInTheDocument();
     expect(screen.getByText('Sourcing')).toBeInTheDocument();
   });
 
@@ -42,12 +42,12 @@ describe('Footer', () => {
     renderWithProviders(<Footer />);
     expect(screen.getByText('Branże')).toBeInTheDocument();
     expect(screen.getByText('Software House')).toBeInTheDocument();
-    expect(screen.getByText('FinTech')).toBeInTheDocument();
+    expect(screen.getByText('Fintech')).toBeInTheDocument();
   });
 
   it('renders specializations section', () => {
     renderWithProviders(<Footer />);
-    expect(screen.getByText('Specjalności')).toBeInTheDocument();
+    expect(screen.getByText('Specjalizacje')).toBeInTheDocument();
     expect(screen.getByText('Cybersecurity')).toBeInTheDocument();
     expect(screen.getByText('Backend Developer')).toBeInTheDocument();
   });
