@@ -56,7 +56,7 @@ const TeamSection = () => {
                 <div className="flex items-center gap-6">
                   <div className="w-48 h-60 flex-shrink-0">
                     <img
-                      src="/images/Marcin zdjęcie CodeTalent.jpg"
+                      src="/images/Marcin_photo_CodeTalent.jpg"
                       alt="Marcin Kowalski"
                       className="w-full h-full object-cover rounded-lg"
                     />
