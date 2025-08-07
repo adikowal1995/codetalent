@@ -97,7 +97,7 @@ const AboutSection = () => {
         'Jasne procesy, czytelne stawki i regularna komunikacja na każdym etapie.',
       icon: (
         <svg
-          className="w-5 h-5"
+          className="w-6 h-6"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -207,35 +207,40 @@ const AboutSection = () => {
               rozumie potrzeby zarówno kandydatów, jak i pracodawców.
             </p>
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
               {animatedStats.map((stat, index) => (
-                <div
+                <Card
                   key={index}
-                  className="text-center p-3 sm:p-4 rounded-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
+                  className="group transition-all duration-300 hover:shadow-lg"
                   style={{
-                    border: `1px solid ${currentTheme.name === 'Theme Master 1.1' ? '#3C6E71' : currentTheme.colors.borderLight}`,
+                    border: `1px solid ${currentTheme.colors.borderLight}`,
+                    backgroundColor: currentTheme.colors.bgPrimary,
                   }}
                 >
-                  <div
-                    className="text-lg sm:text-xl lg:text-2xl font-bold"
-                    style={{
-                      color:
-                        currentTheme.name === 'Theme Master 1.1'
-                          ? '#22577a'
-                          : currentTheme.colors.primaryBlue,
-                    }}
-                  >
-                    {stat.prefix || ''}
-                    {stat.value}
-                    {stat.suffix}
-                  </div>
-                  <div
-                    className="text-xs sm:text-sm lg:text-base"
-                    style={{ color: currentTheme.colors.textSecondary }}
-                  >
-                    {stat.label}
-                  </div>
-                </div>
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="text-center">
+                      <div
+                        className="text-lg sm:text-xl lg:text-2xl font-bold mb-2"
+                        style={{
+                          color:
+                            currentTheme.name === 'Theme Master 1.1'
+                              ? '#22577a'
+                              : currentTheme.colors.primaryBlue,
+                        }}
+                      >
+                        {stat.prefix || ''}
+                        {stat.value}
+                        {stat.suffix}
+                      </div>
+                      <div
+                        className="text-xs sm:text-sm lg:text-base"
+                        style={{ color: currentTheme.colors.textSecondary }}
+                      >
+                        {stat.label}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
@@ -252,59 +257,62 @@ const AboutSection = () => {
             >
               Nasze wartości
             </h3>
-            {values.map((value, index) => (
-              <Card
-                key={index}
-                className="group transition-all duration-300 hover:shadow-lg"
-                style={{
-                  border: `1px solid ${currentTheme.name === 'Theme Master 1.1' ? '#3C6E71' : currentTheme.colors.borderLight}`,
-                  backgroundColor:
-                    currentTheme.name === 'Theme Master 1.1'
-                      ? '#F2E9E4'
-                      : currentTheme.colors.bgPrimary,
-                }}
-              >
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className={`flex-shrink-0 p-1 transition-colors ${index === 0 ? 'border-2 border-current rounded-full' : ''}`}
-                      style={{
-                        color:
-                          currentTheme.name === 'Theme Master 1.1'
-                            ? '#22577a'
-                            : currentTheme.colors.primaryBlue,
-                      }}
-                    >
-                      {value.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4
-                        className="text-lg sm:text-xl font-semibold mb-2 lg:mb-3 transition-colors group-hover:opacity-80"
+            <div className="grid grid-cols-1 gap-4 lg:gap-6">
+              {values.map((value, index) => (
+                <Card
+                  key={index}
+                  className="group transition-all duration-300 hover:shadow-lg"
+                  style={{
+                    border: `1px solid ${currentTheme.colors.borderLight}`,
+                    backgroundColor: currentTheme.colors.bgPrimary,
+                  }}
+                >
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div
+                        className={`flex-shrink-0 p-1 transition-colors ${index === 0 ? 'border-2 border-current rounded-full' : ''}`}
                         style={{
                           color:
                             currentTheme.name === 'Theme Master 1.1'
-                              ? '#0f172a'
-                              : currentTheme.colors.textPrimary,
+                              ? '#22577a'
+                              : currentTheme.colors.primaryBlue,
                         }}
                       >
-                        {value.title}
-                      </h4>
-                      <p
-                        className="leading-relaxed text-sm sm:text-base"
-                        style={{
-                          color:
-                            currentTheme.name === 'Theme Master 1.1'
-                              ? '#475569'
-                              : currentTheme.colors.textSecondary,
-                        }}
-                      >
-                        {value.description}
-                      </p>
+                        {index === 0 ? (
+                          <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M20 6 9 17l-5-5" />
+                          </svg>
+                        ) : (
+                          value.icon
+                        )}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3
+                          className="text-lg sm:text-xl font-semibold mb-2 transition-colors group-hover:opacity-80"
+                          style={{ color: currentTheme.colors.textPrimary }}
+                        >
+                          {value.title}
+                        </h3>
+                        <p
+                          className="leading-relaxed text-sm sm:text-base"
+                          style={{ color: currentTheme.colors.textSecondary }}
+                        >
+                          {value.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </div>
