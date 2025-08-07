@@ -272,19 +272,6 @@ const Footer = () => {
               >
                 Ustawienia Cookies
               </button>
-              <button
-                onClick={resetCookieConsent}
-                className="hover:underline transition-colors text-xs sm:text-sm bg-transparent border-none cursor-pointer"
-                style={{
-                  color:
-                    currentTheme.name === 'Theme Master 1.1'
-                      ? '#3C6E71'
-                      : currentTheme.colors.accentOrange,
-                }}
-                title="Reset cookie consent for testing"
-              >
-                Reset Cookies (Debug)
-              </button>
             </div>
           </div>
         </div>
