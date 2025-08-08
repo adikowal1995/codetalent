@@ -48,9 +48,8 @@ const Footer = () => {
                     : currentTheme.colors.textLight + 'CC',
               }}
             >
-              Specjalizujemy się w rekrutacjach stałych najlepszych specjalistów
-              IT. Tworzymy długoterminowe partnerstwa oparte na zaufaniu i
-              jakości.
+              Specjalizujemy się w rekrutacjach stałych specjalistów IT.
+              Tworzymy długoterminowe partnerstwa oparte na zaufaniu i jakości.
             </p>
             <div
               className="space-y-2 lg:space-y-3 mb-3 lg:mb-4"

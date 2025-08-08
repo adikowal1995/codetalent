@@ -202,9 +202,9 @@ const AboutSection = () => {
               }}
             >
               Jesteśmy agencją rekrutacyjną, która specjalizuje się w
-              pozyskiwaniu najlepszych specjalistów IT. Nasz zespół ma
-              wieloletnie doświadczenie w branży technologicznej i doskonale
-              rozumie potrzeby zarówno kandydatów, jak i pracodawców.
+              pozyskiwaniu specjalistów IT. Nasz zespół ma wieloletnie
+              doświadczenie w branży technologicznej i doskonale rozumie
+              potrzeby zarówno kandydatów, jak i pracodawców.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">

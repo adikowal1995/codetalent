@@ -1164,7 +1164,7 @@ const SalaryCalculator = () => {
                           style={{
                             color:
                               currentTheme.name === 'Theme Master 1.1'
-                                ? '#3C6E71'
+                                ? '#F2E9E4'
                                 : currentTheme.colors.accentOrange,
                           }}
                         >
@@ -1199,7 +1199,7 @@ const SalaryCalculator = () => {
                           style={{
                             color:
                               currentTheme.name === 'Theme Master 1.1'
-                                ? '#3C6E71'
+                                ? '#F2E9E4'
                                 : currentTheme.colors.accentOrange,
                           }}
                         >
@@ -1235,7 +1235,7 @@ const SalaryCalculator = () => {
                         style={{
                           color:
                             currentTheme.name === 'Theme Master 1.1'
-                              ? '#3C6E71'
+                              ? '#F2E9E4'
                               : currentTheme.colors.accentOrange,
                         }}
                       >
@@ -1271,7 +1271,7 @@ const SalaryCalculator = () => {
                         style={{
                           color:
                             currentTheme.name === 'Theme Master 1.1'
-                              ? '#9A8C98'
+                              ? '#F2E9E4'
                               : 'inherit',
                         }}
                       >
@@ -1283,7 +1283,7 @@ const SalaryCalculator = () => {
                           style={{
                             color:
                               currentTheme.name === 'Theme Master 1.1'
-                                ? '#9A8C98'
+                                ? '#F2E9E4'
                                 : 'inherit',
                           }}
                         >

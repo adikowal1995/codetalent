@@ -122,7 +122,7 @@ const ProcessSection = () => {
             style={{
               color:
                 currentTheme.name === 'Theme Master 1.1'
-                  ? '#1a1a2e'
+                  ? '#F2E9E4'
                   : currentTheme.colors.textLight,
             }}
           >
@@ -133,7 +133,7 @@ const ProcessSection = () => {
             style={{
               color:
                 currentTheme.name === 'Theme Master 1.1'
-                  ? '#1a1a2e'
+                  ? '#F2E9E4'
                   : currentTheme.colors.textLight,
             }}
           >
